@@ -43,6 +43,8 @@ const lengthOfZeroVals = arr.filter((i) => i===0).length
 console.log((lengthOfPositiveVals/arr.length).toFixed(6))
 console.log((lengthOfNegativeVals/arr.length).toFixed(6))
 console.log((lengthOfZeroVals/arr.length).toFixed(6))
+
+
 };
 
 arr = [1, 1, 0, -1, -1];
