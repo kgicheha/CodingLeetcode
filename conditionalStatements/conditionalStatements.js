@@ -27,7 +27,7 @@ const conditionalStatement = (n) => {
     } else if (n > 6 && n < 20) {
       console.log("Weird");
     }
-  } else {
+  } else if((n % 2) = 1) {
     console.log("Weird");
   }
 };
