@@ -9,6 +9,14 @@ Given an integer, n, perform the following conditional actions:
     If  is even and greater than 20 , print Not Weird
 
 print 'Weird' if the number is weird, otherwise print 'Not Weird'
+
+/*
+Not Weird
+    EVEN && n > 2 && n < 5
+    EVEN n > 20
+Weird
+    ODD
+    EVEN & n > 6 && n < 20
 */
 
 
