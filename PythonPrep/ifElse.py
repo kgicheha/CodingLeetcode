@@ -39,3 +39,13 @@ def my_function(n):
             print("Weird")
     else:
         print("Weird")
+
+
+    #DIFFERENT WAY
+    if(n % 2 == 0):
+        if (n in range(2,5)) or (n > 20):
+            print('Not Weird')
+        else:
+            print("Weird")
+    else:
+        print("Weird")
