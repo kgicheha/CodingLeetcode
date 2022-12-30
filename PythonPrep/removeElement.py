@@ -17,5 +17,28 @@ You must do this by modifying the input array in-place with O(1) extra memory.
 
 '''
 
+'''
+GIVEN: array of nums, and val
+STEPS:
+    iterate array
+        if nums[i] == val:
 
-def removeElement():
+
+
+
+'''
+
+
+def removeElement(nums, val):
+
+    print(nums)
+    for i in range(len(nums)):
+        if val in nums:
+            nums.remove(val)
+
+    print(nums)
+
+
+
+nums = [0,1,2,2,3,0,4,2]
+removeElement(nums,2)
