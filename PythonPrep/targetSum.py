@@ -24,4 +24,28 @@ Explanation: There are 5 ways to assign symbols to make the sum of nums be targe
 
 '''
 
- def findTargetSumWays(nums, target):
+'''
+GIVEN: array of numbers and target value
+
+return: the total number of possibilities to sum to the target
+
+'''
+
+def findTargetSumWays(nums, target):
+    dp = {} #(index, total) -> # of ways
+
+    def backtrack(i, total):
+        if i == len(nums):
+            return 1 if total == target else 0
+        if (i, total) in dp:
+            dp[(i, total)]
+
+        dp[(i,total)] = backtrack(i+1, total + nums[i]) + backtrack(i +1, total - nums[i])
+
+        return dp[(i, total)]
+    return backtrack(0,0)
+
+nums = [1,1,1,1,1]
+target = 3
+
+print(findTargetSumWays(nums, target))
