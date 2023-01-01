@@ -17,4 +17,10 @@ Explanation: The answer is "b", with the length of 1.
 
 '''
 
+'''
+GIVEN: string
+
+Return: length of longest substring without repeating characters
+
+'''
 def lengthOfLongestSubstring(s: str):
