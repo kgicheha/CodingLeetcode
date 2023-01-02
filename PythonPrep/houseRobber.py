@@ -23,6 +23,10 @@ Total amount you can rob = 1 + 3 = 4.
 '''
 
 '''
+GIVEN: array of numbers representing the amount of money of each huose
+STEPS:
+RETURN: maximum amount of money you can rob without alerting the police
+
 
 '''
 
