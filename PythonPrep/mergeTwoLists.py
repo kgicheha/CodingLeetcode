@@ -44,7 +44,7 @@ STEPS:
         add them to the output list
 
     return the dummy.next
-        thsi will return the next nodes
+        thsi will return the next nodes, one at a time
 RETURN: the head of the merged linked list
 
 
