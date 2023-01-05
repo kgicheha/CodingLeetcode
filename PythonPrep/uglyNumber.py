@@ -31,10 +31,40 @@ GIVEN: num
 STEPS:
     edge case: if given number is negative, return false
 
+    loop
+    if the given number is fully divisible by 2, 3, and 5
+        keep dividing it by either 2,3,or 5
+    return true if the result == 1
 
-RESULT: return true if given number is a positive integer whose prime factors are limited to 2,3,5
+
+
+RESULT: return true if given number is a positive and is a multiple of only 2,3,5
 '''
 def isUgly(n):
-    if n < 0:
+    if n <= 0:
         return False
-    # if (n > 0) and
+
+    # SOLUTION1
+    if n == 1:
+        return True
+    while (n % 2 == 0) or (n % 3 == 0) or (n % 5 == 0):
+        if n % 2 == 0:
+            n = n // 2
+        if n % 3 == 0:
+            n = n // 3
+        if n % 5 == 0:
+            n = n // 5
+    return n == 1
+
+
+
+    # SOLUTION2: CLEANER
+    ugly_factor = [2,3,5]
+    for u in ugly_factor:
+        while n % u == 0:
+            n = n // u
+    return n == 1
+
+print(isUgly(20))
+print(isUgly(14))
+print(isUgly(-1))
