@@ -9,6 +9,18 @@ For example, alison heck should be capitalised correctly as Alison Heck.
 '''
 
 '''
+STEPS:
+    split each word and store it to an array
+
+    iterate each word
 
 '''
 def capitalize(s):
+    split_word = s.split(" ")
+
+    for i in split_word:
+        s = s.replace(i, i.capitalize())
+    return s
+
+
+capitalize("alison heck")
