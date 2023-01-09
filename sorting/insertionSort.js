@@ -1,4 +1,13 @@
 /*
+Effiecient for small data values
+	Appropriate for data sets which are already partially sorted
+Time Complexity: O(N)^2
+Space Complexity: O(1)
+Process
+	Iterate from second element in the array to the last element
+	Compate the current element to its predecessor
+	If the key element is smaller than its predecessor, compare it to the elements before
+Move the greater element one position up to make space for the swapped element
 
 */
 
