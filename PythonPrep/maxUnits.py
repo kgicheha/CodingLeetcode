@@ -31,9 +31,21 @@ GIVEN:
     2D array: stores the number of boxes, and the units each box contains
     truckSize
 STEPS:
+    sort the boxTypes based on the units that each box contains
+    create a variably that keeps track of capacity(how many boxes you've put in the truck so far)
+        initialize variable as 0
 RETURN: the maximum total number of units that can be put on the truck
 
 '''
 
 def maximumUnits(boxTypes, truckSize):
-    print(boxTypes)
+
+   boxTypes.sort(key = lambda x: x[1], reverse = True)
+
+   capacity = 0
+   return boxTypes
+
+boxTypes = [[5,10],[2,5],[4,7],[3,9]]
+truckSize = 4
+
+print(maximumUnits(boxTypes, truckSize))
