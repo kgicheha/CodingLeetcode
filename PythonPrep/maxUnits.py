@@ -32,18 +32,40 @@ GIVEN:
     truckSize
 STEPS:
     sort the boxTypes based on the units that each box contains
-    create a variably that keeps track of capacity(how many boxes you've put in the truck so far)
+        sort in descending order
+    create a variably that keeps track of max units(how many boxes you've put in the truck so far)
         initialize variable as 0
+
+    loop through the sorted box types
+        if the box is less than the truckSize
+            increase the max units by the (box * units of the box)
+            reduce the truckSize by the number of boxes we just put in the truck
+        else: if the number of boxes > truckSize
+            return the max_units + (truckSize * unit)
+
 RETURN: the maximum total number of units that can be put on the truck
 
+
+TIME COMPLEXITY: O(N log N)
+    because the sort function takes O(n log n), which is the worst case scenario
+    for loop takes O(n)
+SPACE COMPLEXITY: 0(1)
 '''
 
 def maximumUnits(boxTypes, truckSize):
 
    boxTypes.sort(key = lambda x: x[1], reverse = True)
 
-   capacity = 0
-   return boxTypes
+   max_units = 0
+
+   for box, unit in boxTypes:
+        if box <= truckSize:
+            max_units += (box * unit)
+            truckSize -= box
+        else:
+            return max_units + (truckSize * unit)
+
+   return max_units
 
 boxTypes = [[5,10],[2,5],[4,7],[3,9]]
 truckSize = 4
