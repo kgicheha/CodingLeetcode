@@ -31,7 +31,7 @@ GIVEN:
     2D array: stores the number of boxes, and the units each box contains
     truckSize
 STEPS:
-RETURN:
+RETURN: the maximum total number of units that can be put on the truck
 
 '''
 
