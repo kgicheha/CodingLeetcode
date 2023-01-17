@@ -42,6 +42,7 @@ STEPS:
             reduce the truckSize by the number of boxes we just put in the truck
         else: if the number of boxes > truckSize
             return the max_units + (truckSize * unit)
+                add how much (truckSize is left * the unit in the the current box
 
 RETURN: the maximum total number of units that can be put on the truck
 
@@ -68,6 +69,6 @@ def maximumUnits(boxTypes, truckSize):
    return max_units
 
 boxTypes = [[5,10],[2,5],[4,7],[3,9]]
-truckSize = 4
+truckSize = 10
 
 print(maximumUnits(boxTypes, truckSize))
