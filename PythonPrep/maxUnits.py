@@ -28,9 +28,12 @@ The total number of units will be = (1 * 3) + (2 * 2) + (1 * 1) = 8.
 
 '''
 GIVEN:
+    2D array: stores the number of boxes, and the units each box contains
+    truckSize
 STEPS:
 RETURN:
 
 '''
 
 def maximumUnits(boxTypes, truckSize):
+    print(boxTypes)
