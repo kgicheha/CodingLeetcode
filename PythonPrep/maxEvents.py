@@ -23,5 +23,27 @@ Attend the third event on day 3.
 
 '''
 
+'''
+GIVEN:
+    2D array --> index 0: the start day, index 1: end day
+STEPS:
+    sort by the end date (index 1)
+    create variable that stores the maxEvents
+        initialize it to 0
+RESULTS: max number of events you can attend
+'''
+
 def maxEvents(events):
-    print(events)
+
+    events.sort(key = lambda x: x[1])
+
+    maxEvents = 0
+    return events
+
+
+
+
+
+# events= [[1,2],[2,3],[3,4],[1,2]]
+events= [[ 1,4],[4,4],[2,2],[3,4], [1,1]]
+print(maxEvents(events))
