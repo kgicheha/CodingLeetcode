@@ -12,6 +12,16 @@ Return the maximum number of events you can attend.
 '''
 
 '''
-
+EXAMPLE 1
+Input: events = [[1,2],[2,3],[3,4]]
+Output: 3
+Explanation: You can attend all the three events.
+One way to attend them all is as shown.
+Attend the first event on day 1.
+Attend the second event on day 2.
+Attend the third event on day 3.
 
 '''
+
+def maxEvents(events):
+    print(events)
