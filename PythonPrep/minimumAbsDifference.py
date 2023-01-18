@@ -22,7 +22,13 @@ Output: [[1,2],[2,3],[3,4]]
 Explanation: The minimum absolute difference is 1.
 List all pairs with difference equal to 1 in ascending order.
 '''
+'''
+GIVEN: given array of DISTINT integers
+STEPS:
+RESULT: return a list of pairs in ASCENDING order
+            of the pairs with the minimum absolute difference
 
+'''
 def minimumAbsDifference(arr):
     return arr
 
