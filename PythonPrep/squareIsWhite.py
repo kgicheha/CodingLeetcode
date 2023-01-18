@@ -36,6 +36,7 @@ RESULT:
     return FALSE if the given coordinate is black
 
 '''
+
 def squareIsWhite(coordinates):
     letters ={'even':['a', 'c','e', 'g'], 'odd':['b', 'd', 'f', 'h']}
 
