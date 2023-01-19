@@ -22,6 +22,16 @@ RETURN: 2 strings
 
 */
 
-const processData = (input) =>{
+const processData = (input) => {
+  let evenNumString = "",
+    oddNumString = "";
 
-}
+  let inputCopy = input.split("\n").slice(1);
+
+  for (let i in inputCopy) {
+    i % 2 === 0 ? (evenNumString += inputCopy[i]) : (oddNumString += inputCopy[i]);
+  }
+
+  console.log(`${evenNumString}\n ${oddNumString}`);
+};
+processData("adbecf");
