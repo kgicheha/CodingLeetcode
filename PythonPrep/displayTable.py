@@ -41,6 +41,45 @@ For the table 10: Corina orders "Beef Burrito".
 '''
 
 def displayTable(orders):
+    food_items = []
+    table_nums = []
+    map_orders = {}
+
+    for order in orders:
+        if order[2] not in food_items:
+            food_items.append(order[2])
+        if int(order[1]) not in table_nums:
+            table_nums.append(int(order[1]))
+        new_order = (int(order[1]), order[2])
+        if new_order not in map_orders:
+            map_orders[new_order] = 1
+        else:
+            map_orders[new_order] += 1
+
+    food_items.sort()
+    table_nums.sort()
+    food_items.insert(0, 'Table')
+
+    answer = []
+    answer.append(food_items)
+
+    for i in range(len(table_nums)):
+        new_entry = []
+        for j in range(len(food_items)):
+            if j == 0:
+                new_entry.append(str(table_nums[i]))
+            else:
+                entry_tuple = (table_nums[i], food_items[j])
+                if entry_tuple in map_orders:
+                    new_entry.append(str(map_orders[entry_tuple]))
+                else:
+                    new_entry.append('0')
+
+        answer.append(new_entry)
+        new_entry = []
+
+    return answer
+
     print(orders)
 
 
