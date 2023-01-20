@@ -43,3 +43,8 @@ def winningLotteryTicket(tickets):
             rp = lp + 1
 
     return winning_pair_count
+
+
+tickets = ['129300455', '5559948277', '012334556', '56789', '123456879']
+
+print(winningLotteryTicket(tickets))
