@@ -14,4 +14,22 @@ RESULT:
 '''
 
 def divisibleSumPairs(n, k, ar):
-    print(n)
+    pair_count = 0
+    lp = 0
+
+    for lp in range(n):
+
+        rp = lp + 1
+
+        while rp < n:
+            if (lp < rp):
+                if((ar[lp] + ar[rp]) % k == 0):
+                    pair_count += 1
+                    print(ar[lp],ar[rp])
+            else:
+                lp += 1
+                rp = lp + 1
+            rp += 1
+    print(pair_count)
+
+divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2])
