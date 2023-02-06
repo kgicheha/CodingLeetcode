@@ -10,7 +10,7 @@ GIVEN:
 STEPS:
 
     edge case: empty array --> return arr
-    edge case: if arry has 1 item --> return item
+    edge case: if arry has 1 item --> return arr
 
 
     sort the given array
@@ -41,8 +41,41 @@ RETURN:
 '''
 
 def closestNumbers(arr):
+    if len(arr) <= 1:
+        return arr
+
     arr.sort()
-    print(arr)
+
+    result = []
+    lp = 0
+    rp = lp + 1
+    min_dif = -(arr[lp] - arr[rp])
+
+    while rp < len(arr):
+        cur_dif = -(arr[lp] - arr[rp])
+        print(cur_dif)
+
+        if cur_dif < min_dif:
+            min_dif = cur_dif
+            result = []
+            result.append(arr[lp])
+            result.append(arr[rp])
+
+        elif cur_dif == min_dif:
+            result.append(arr[lp])
+            result.append(arr[rp])
+
+        lp += 1
+        rp = lp + 1
+
+
+    print(result)
+
+
+
+
+
+
 
 arr = [5,2,3,4,1]
 closestNumbers(arr)
