@@ -40,6 +40,12 @@ RETURN:
     return an array of the pair of numbers, that has the smallest absolute difference betweent them
 '''
 
+'''
+TIME COMPLEXITY: O(N)
+SPACE COMPLEXITY: O(N)
+
+'''
+
 def closestNumbers(arr):
     if len(arr) <= 1:
         return arr
