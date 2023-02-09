@@ -1,5 +1,15 @@
 '''
+Given an array of size N.
+Find the largest sum of the contiguous subarray within the array
+'''
 
+'''
+GIVEN:
+    array
+STEPS:
+    KADANE'S ALGORITHM
+RESULT:
+    return the largest sum of the contigious subarray
 '''
 
 def largestsumSubarray(arr):
