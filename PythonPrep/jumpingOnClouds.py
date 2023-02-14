@@ -14,10 +14,29 @@ if they are safe or  if they must be avoided.
 '''
 
 '''
-GIVEN: array
+GIVEN: array with 0s and 1s
+    0 digits are safe, 1 digit are not safe
 STEPS:
+    intialize a count that keeps track of the amount of steps from the starting point to the finish
+
 RESULT:
+    the minimum number of jumps it will take to jump from the starting cloud to the last cloud
 '''
 def jumpingOnClouds(c):
-    print(c)
+    minTravel = 0
+    i = 0
 
+    while i < len(c)-1:
+        if i < len(c) - 2 and c[i + 2] == 0 :
+            i += 2
+        else:
+            i += 1
+        minTravel += 1
+
+    print(minTravel)
+
+
+
+c= [0,0,0,1,0,0]
+# c = [0,1,0,0,0,1,0]
+jumpingOnClouds(c)
