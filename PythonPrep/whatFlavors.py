@@ -42,7 +42,8 @@ def whatFlavors(cost, money):
     print(diff)
 
     for key in diff:
-        if diff[key] in cost:
+        if diff[key] in cost and (key != diff[key]):
+            semi_result.append(key)
             semi_result.append(diff[key])
 
     for i in range(len(semi_result)):
@@ -51,7 +52,12 @@ def whatFlavors(cost, money):
                 result.append(j+1)
 
     print(semi_result)
-    print(result)
-cost = [2,1,3,5,6]
-money = 5
+    # print(result)
+
+    for i in result:
+        print(i, end=" ")
+
+# cost = [2,1,3,5,6]
+cost = [1,4,5,3,2]
+money = 4
 whatFlavors(cost, money)
