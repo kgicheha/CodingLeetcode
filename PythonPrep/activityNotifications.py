@@ -70,6 +70,9 @@ def activityNotifications(expenditure, d):
     print(total_count)
 
 
-expenditure = [1, 2, 3, 4, 4]
+# expenditure = [1, 2, 3, 4, 4]
+# d = 4
+
+expenditure = [2,3,4,2,3,6,8,4,5]
 d = 4
 activityNotifications(expenditure, d)
