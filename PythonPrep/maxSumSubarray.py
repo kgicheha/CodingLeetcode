@@ -26,6 +26,25 @@ BRUTE FORCE APPROACH
 
 OPTIMAL SOLUTION (KADANE'S ALGORITHM --> DYNAMIC PROGRAMMING)
 
+    initialize max variable equal to the first element in the array
+    initialize current sum varibale equal to the first element in the array
+
+    loop starting from the 2 element in the array
+
+        in each step you have two choices:
+            1. add the current number to the current sum variable
+            2. start fresh from the current number
+
+            if the current number is MORE than the sum of the previous variables:
+                start fresh at current number by setting the current sum to equal the current number
+
+            else if the current number is LESS than the sum of the sum of the previous subarray
+                add the current number to the sum of the sub array
+
+            compare the current sum of the sub array to the max sum
+                if the current sum is MORE than the max sum
+                    set the current sum as the new max sum
+
 '''
 
 
@@ -49,9 +68,22 @@ def maxSumSubarray(arr):
     cur_sum = arr[0]
 
     for i in range(1, n):
-        cur_sum = max(arr[i] + cur_sum, arr[i])
 
-        max_sum = max(cur_sum, max_sum)
+        # LONG WAY
+        if cur_sum > arr[i]:
+            cur_sum += arr[i]
+        else:
+            cur_sum = arr[i]
+
+
+        if cur_sum > max_sum:
+            max_sum = cur_sum
+
+
+        # SHORT WAY
+        # cur_sum = max(arr[i] + cur_sum, arr[i])
+
+        # max_sum = max(cur_sum, max_sum)
     print(max_sum)
 
 
