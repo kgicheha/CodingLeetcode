@@ -32,7 +32,26 @@ def minWindowSubString(s,t):
     count = 0
     minimum_window = ""
 
-    while right <
+    while right < len(s):
+        counter_search[s[right]] += 1
+
+        if s[right] in counter_t:
+            if counter_search[s[right]] <= counter_t[s[right]]:
+                count += 1
+
+        while left <= right and count == len(t):
+            if minimum > right - left + 1:
+                minimum = right - left + 1
+                minimum_window = s[left : right + 1]
+
+            counter_search[s[right]] -= 1
+
+            if s[right] in counter_t and counter_search[s[left]] < counter_t[s[left]]:
+                count -= 1
+
+        print(count)
+        right += 1
+
 
 
 
