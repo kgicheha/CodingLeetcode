@@ -32,17 +32,28 @@ OPTIMAL SOLUTION (KADANE'S ALGORITHM --> DYNAMIC PROGRAMMING)
 def maxSumSubarray(arr):
     n = len(arr)
 
-    max_sum = arr[0]
-
     # BRUTE FORCE APPROACH
-    for left in range(n):
-        cur_sum = 0
-        for right in range(left, n):
-            cur_sum += arr[right]
+    # max_sum = arr[0]
 
-            max_sum = max(max_sum, cur_sum)
+    # for left in range(n):
+    #     cur_sum = 0
+    #     for right in range(left, n):
+    #         cur_sum += arr[right]
 
+    #         max_sum = max(max_sum, cur_sum)
+
+    # print(max_sum)
+
+    # OPTIMAL SOLUTION
+    max_sum = arr[0]
+    cur_sum = arr[0]
+
+    for i in range(1, n):
+        cur_sum = max(arr[i] + cur_sum, arr[i])
+
+        max_sum = max(cur_sum, max_sum)
     print(max_sum)
+
 
 
 arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
