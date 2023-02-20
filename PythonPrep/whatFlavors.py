@@ -58,6 +58,7 @@ def whatFlavors(cost, money):
         print(i, end=" ")
 
 # cost = [2,1,3,5,6]
-cost = [1,4,5,3,2]
+# cost = [1,4,5,3,2]
+cost = [1,2,3,5,6]
 money = 4
 whatFlavors(cost, money)
