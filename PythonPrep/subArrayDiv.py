@@ -10,5 +10,19 @@ Lily decides to share a contiguous segment of the bar selected such that:
 Determine how many ways she can divide the chocolate.
 '''
 
+'''
+Example
+s = [2,2,1,3,2]
+d = 4
+m = 2
+
+'''
 def birthday(s,d,m):
-    print s
+    print(s)
+
+
+s = [2,2,1,3,2]
+d = 4
+m = 2
+
+birthday(s,d,m)
