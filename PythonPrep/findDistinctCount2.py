@@ -20,7 +20,20 @@ RESULT:
     total number of distict absolute values
 '''
 def findDistinctCount(arr):
+    seen = set()
+    count = 0
 
+    for i in range(len(arr)):
+        if arr[i] < 0:
+            arr[i] = -arr[i]
+
+        if arr[i] not in seen:
+            count += 1
+            print(arr[i])
+
+        seen.add(arr[i])
+
+    print(count)
 
 arr = [-1, -1, 0, 1, 1, 1 ]
 findDistinctCount(arr)
