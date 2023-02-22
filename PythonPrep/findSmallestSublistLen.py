@@ -39,6 +39,8 @@ STEPS:
                 removing the value in the left pointer from the window sum
                 incrementing left pointer by 1
 
+    return min_length
+
 RESULT:
     smallest subarray length whose sum of elements is > than k
 '''
