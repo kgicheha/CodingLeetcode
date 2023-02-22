@@ -35,7 +35,9 @@ def findSublist(arr, target):
     window_sum = 0
 
     for left in range(len(arr)):
+
         right = left
+
         while (right < len(arr)) and (window_sum < target) :
                 window_sum += arr[right]
                 right += 1
