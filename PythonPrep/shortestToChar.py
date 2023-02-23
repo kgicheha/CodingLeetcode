@@ -24,9 +24,26 @@ RESULTS:
 
 '''
 def shortestToChar(s, c):
-    print(s)
+
+    left = 0
+    right = len(s) - 1
+    distance = 0
+    output = []
+
+    print(right)
+
+    while left <= right:
+        distance = right - left
+        if s[left] == c:
+            output.append(distance)
+            right -= 1
+        elif s[right] == c:
+            output.append(distance)
+            left += 1
+
+    print(output)
 
 
-s = "aaab"
+s = "abaa"
 c = "b"
 shortestToChar(s, c)
