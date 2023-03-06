@@ -41,13 +41,21 @@ RETURN array of the indeces that sum up to given target number
 def twSum(nums, target):
     prevMap = {} # value: index
 
-    for i, n in enumerate(nums):
-        diff = target - n
+    # for i, n in enumerate(nums):
+    #     diff = target - n
+
+    #     if diff in prevMap:
+    #         return [prevMap[diff], i]
+    #     prevMap[n] = i
+    # return
+
+    for i in range(len(nums)):
+        diff = target - nums[i]
 
         if diff in prevMap:
             return [prevMap[diff], i]
-        prevMap[n] = i
-    return
+        prevMap[nums[i]] = i
+
 
 
 nums = [3,2,4]
