@@ -5,3 +5,7 @@ cannot use additional data structures?
 def isUnique(str):
     print(str)
 
+
+isUnique("abcd10jk")
+isUnique("hutg9mnd!nk9")
+
