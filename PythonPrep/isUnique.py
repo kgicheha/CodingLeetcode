@@ -20,15 +20,14 @@ def isUnique(str):
 
     # WITHOUT USING ANOTHER DATA STRUCTURE
 
-    str.sort()
+    sorted_str = sorted(str)
 
-    print(str)
+    for s in range(len(sorted_str) - 1):
+        if sorted_str[s] == sorted_str[s + 1]:
+            return False
+    return True
 
 
-
-
-
-
-isUnique("abcd10jk")
-isUnique("hutg9mnd!nk9")
+print(isUnique("abcd10jk"))
+print(isUnique("hutg9mnd!nk9"))
 
