@@ -48,6 +48,14 @@ class LinkedList:
 
         current.next = new_node
 
+    def preprend(self,data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+
+        new_node.next = self.head
+        self.head = new_node
 
 
 my_llist = LinkedList()
