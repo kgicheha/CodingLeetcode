@@ -51,6 +51,6 @@ class LinkedList:
 
 
 my_llist = LinkedList()
-my_llist.append = Node(5)
-my_llist.append = Node(3)
+my_llist.append(5)
+my_llist.append(3)
 my_llist.printList()
