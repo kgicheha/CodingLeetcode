@@ -37,7 +37,7 @@ class LinkedList:
 
         # if list is empty, set the head to new node
         if self.head == None:
-            head = new_node
+            self.head = new_node
             return
 
         # traverse node until you get to the last node
