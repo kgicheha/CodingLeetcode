@@ -58,25 +58,12 @@ class LinkedList:
         self.length += 1
 
 
-    # def insert_after_node(self, previous_node, data):
-
-    #     if not previous_node:
-    #         print("Previous node is not in the list")
-    #         return
-
-    #     new_node = Node(data)
-
-    #     new_node.next = previous_node.next
-    #     previous_node.next = new_node
-
-    #     self.length += 1
-
     # ADDING INSIDE THE LIST
     def insert(self, index, data):
 
         if index == 0:
             return self.prepend(data)
-        if index == self.length:
+        if index == self.length - 1:
             return self.append(data)
 
         if index < 0 or index >= self.length:
