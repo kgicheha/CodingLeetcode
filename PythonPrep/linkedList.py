@@ -18,19 +18,19 @@ class LinkedList:
     # ADDING AT THE END OF LIST
     def append(self, data):
 
-            new_node = Node(data)
+        new_node = Node(data)
 
-            if self.head == None:
-                self.head = new_node
-                return
+        if self.head == None:
+            self.head = new_node
+            return
 
-            current = self.head
-            while current.next != None:
-                current = current.next
+        current = self.head
+        while current.next != None:
+            current = current.next
 
-            current.next = new_node
+        current.next = new_node
 
-            self.length += 1
+        self.length += 1
 
     # ADDING AT THE BEGGING OF LIST
     def prepend(self,data):
@@ -102,6 +102,7 @@ class LinkedList:
             i += 1
         return current
 
+    # CHANGING A VALUE FROM A PARTICULAR INDEX
     def set(self, index, data):
         current = self.get(index)
 
@@ -123,6 +124,8 @@ class LinkedList:
 
         return current.data
 
+
+
     # DELETION AT THE END OF LIST
     def pop(self):
         if self.head == None:
@@ -140,6 +143,28 @@ class LinkedList:
             self.head = None
 
         return current.data
+
+    # REMOVING NODE FROM A PARTICULAR INDEX
+    def remove(self, index):
+        if index == 0:
+            return self.shift()
+        if index == self.length - 1:
+            return self.pop()
+        if index < 0 or index >= self.length:
+            return None
+
+        before = self.get(index - 1)
+
+        current = before.next
+
+        before.next = current.next
+        current.next = None
+
+        self.length -= 1
+
+        return current.data
+
+
 
     def reverseList(self):
         # if list is empty
@@ -177,6 +202,6 @@ my_llist.printList()
 # print(my_llist.get(2))
 # print(my_llist.set(0, 109))
 # my_llist.printList()
-print("Removed item",my_llist.shift())
+print("Removed item",my_llist.remove(1))
 my_llist.printList()
 # my_llist.reverseList()
