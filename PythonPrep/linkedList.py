@@ -39,6 +39,27 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
+    # ADDING INSIDE THE LIST
+    def insert_after_node(self, previous_node, data):
+
+        if not previous_node:
+            print("Previous node is not in the list")
+            return
+
+        new_node = Node(data)
+
+        new_node.next = previous_node.next
+        previous_node.next = new_node
+
+    # ADDING IN THE MIDDLE OF A LINKED LIST
+    def insert_in_middle(self, data):
+
+        list_length = 0
+        current = self.head
+
+        while current:
+            list_length += 1
+            current = current.next
 
     def reverseList(self):
         # if list is empty
@@ -67,6 +88,8 @@ class LinkedList:
 my_llist = LinkedList()
 print(my_llist.append(5))
 my_llist.append(3)
+my_llist.append(2)
 # my_llist.prepend(1)
+my_llist.insert_after_node(my_llist.head.next, 1)
 my_llist.printList()
 # my_llist.reverseList()
