@@ -15,6 +15,19 @@ class LinkedList:
             print(current.data)
             current = current.next
 
+    # GET NODE FROM A PARTICULAR INDEX
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+
+        current = self.head
+
+        i = 0
+        while i < index:
+            current = current.next
+            i += 1
+        return current
+
     # ADDING AT THE END OF LIST
     def append(self, data):
 
@@ -44,19 +57,42 @@ class LinkedList:
 
         self.length += 1
 
-    # ADDING INSIDE THE LIST
-    def insert_after_node(self, previous_node, data):
 
-        if not previous_node:
-            print("Previous node is not in the list")
-            return
+    # def insert_after_node(self, previous_node, data):
+
+    #     if not previous_node:
+    #         print("Previous node is not in the list")
+    #         return
+
+    #     new_node = Node(data)
+
+    #     new_node.next = previous_node.next
+    #     previous_node.next = new_node
+
+    #     self.length += 1
+
+    # ADDING INSIDE THE LIST
+    def insert(self, index, data):
+
+        if index == 0:
+            return self.prepend(data)
+        if index == self.length:
+            return self.append(data)
+
+        if index < 0 or index >= self.length:
+            return None
 
         new_node = Node(data)
 
-        new_node.next = previous_node.next
-        previous_node.next = new_node
+        current = self.get(index - 1)
+
+        new_node.next = current.next
+
+        current.next = new_node
 
         self.length += 1
+
+        return True
 
     # ADDING IN THE MIDDLE OF A LINKED LIST
     def insert_in_middle(self, data):
@@ -89,18 +125,6 @@ class LinkedList:
 
         self.length += 1
 
-    # GET NODE FROM A PARTICULAR INDEX
-    def get(self, index):
-        if index < 0 or index >= self.length:
-            return None
-
-        current = self.head
-
-        i = 0
-        while i < index:
-            current = current.next
-            i += 1
-        return current
 
     # CHANGING A VALUE FROM A PARTICULAR INDEX
     def set(self, index, data):
@@ -200,8 +224,8 @@ my_llist.append(4)
 # my_llist.insert_in_middle(5)
 my_llist.printList()
 # print(my_llist.get(2))
-# print(my_llist.set(0, 109))
+print(my_llist.insert(1, 109))
 # my_llist.printList()
-print("Removed item",my_llist.remove(1))
+# print("Removed item",my_llist.remove(1))
 my_llist.printList()
 # my_llist.reverseList()
