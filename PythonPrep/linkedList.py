@@ -111,6 +111,18 @@ class LinkedList:
 
         return False
 
+    # DELETION AT THE BEGINNING OF LIST
+    def shift(self):
+        if self.head == None:
+            return None
+
+        current = self.head
+        self.head = self.head.next
+        current.next = None
+        self.length -= 1
+
+        return current.data
+
     # DELETION AT THE END OF LIST
     def pop(self):
         if self.head == None:
@@ -165,6 +177,6 @@ my_llist.printList()
 # print(my_llist.get(2))
 # print(my_llist.set(0, 109))
 # my_llist.printList()
-print(my_llist.pop())
+print("Removed item",my_llist.shift())
 my_llist.printList()
 # my_llist.reverseList()
