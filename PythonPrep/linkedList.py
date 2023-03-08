@@ -6,8 +6,6 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
-        self.tail = self.head
-        self.length = 1
 
     def printList(self):
         current = self.head
@@ -16,10 +14,10 @@ class LinkedList:
             print(current.data)
             current = current.next
 
+    # ADDING AT THE END OF LIST
     def append(self, data):
 
             new_node = Node(data)
-
 
             if self.head == None:
                 self.head = new_node
@@ -30,6 +28,16 @@ class LinkedList:
                 current = current.next
 
             current.next = new_node
+
+    # ADDING AT THE BEGGING OF LIST
+    def prepend(self,data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+
+        new_node.next = self.head
+        self.head = new_node
 
 
     def reverseList(self):
@@ -53,19 +61,12 @@ class LinkedList:
 
 
 
-    def prepend(self,data):
-        new_node = Node(data)
 
-        if self.head is None:
-            self.head = new_node
-
-        new_node.next = self.head
-        self.head = new_node
 
 
 my_llist = LinkedList()
-my_llist.append(5)
+print(my_llist.append(5))
 my_llist.append(3)
-my_llist.prepend(1)
+# my_llist.prepend(1)
 my_llist.printList()
 # my_llist.reverseList()
