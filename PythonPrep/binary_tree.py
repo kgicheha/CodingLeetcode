@@ -1,39 +1,61 @@
 class treeNode:
     def __init__(self, data):
         self.data = data
-        self.left = None
-        self.right = None
+        self.leftChild = None
+        self.rightChild = None
 
-class binaryTree:
+    # ADDING CHILDREN
+    def insert(self, data):
 
-    def __init__(self, data):
-        self.data = treeNode(data)
-
-
-    def insert(self,data):
-        if self.data:
-            if data < self.data:
-                if self.left == None:
-                    self.left = treeNode(data)
-                else:
-                    self.left.insert(data)
+        if data < self.data:
+            if self.leftChild:
+               self.leftChild.insert(data)
             else:
-                if self.right is None:
-                    self.right = treeNode(data)
-                else:
-                    self.right.insert(data)
+                self.leftChild = treeNode(data)
+                return
+        else:
+            if self.rightChild:
+                self.rightChild.insert(data)
+            else:
+                self.rightChild = treeNode(data)
+                return
 
 
+    def printInorder(self):
 
-    def in_order_traversal(self, root):
-        result= []
-        if root:
-            result.append(self.in_order_traversal(root.left))
+            # self.printInorder(self.leftChild)
+        if self.leftChild:
+            self.leftChild.printInorder()
 
-            result.append(root.data)
+        print(self.data)
 
-            result.append(self.in_order_traversal(root.right))
+            # self.printInorder(self.rightChild)
+        if self.rightChild:
+            self.rightChild.printInorder()
 
-        return result
+    def printPreOrder(self):
 
-bin_trey = binaryTree("A")
+        print(self.data)
+
+        if self.leftChild:
+            self.leftChild.printPreOrder()
+
+        if self.rightChild:
+            self.rightChild.printPreOrder()
+
+    def printPostOrder(self):
+
+        if self.leftChild:
+            self.leftChild.printPostOrder()
+
+        if self.rightChild:
+            self.rightChild.printPostOrder()
+
+        print(self.data)
+
+bin_tree = treeNode(1)
+bin_tree.insert(2)
+bin_tree.insert(3)
+bin_tree.insert(4)
+bin_tree.insert(5)
+bin_tree.printInorder()
