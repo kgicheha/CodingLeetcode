@@ -26,42 +26,40 @@ class binaryTree:
 
         return node
 
-    def printInorder(self, root):
+    def printInorder(self, node, result = []):
 
-        result = []
-
-        if root is not None:
-            self.printInorder(root.leftChild)
-            result.append(self.data)
-            self.printInorder(root.rightChild)
+        if node is not None:
+            self.printInorder(node.leftChild, result)
+            result.append(node.data)
+            self.printInorder(node.rightChild, result)
 
         print(result)
 
-    def printPreOrder(self):
+    def printPreOrder(self, node, result = []):
 
-        print(self.data)
+        if node is not None:
+            result.append(node.data)
+            self.printPreOrder(node.leftChild, result)
+            self.printPreOrder(node.rightChild, result)
 
-        if self.leftChild:
-            self.leftChild.printPreOrder()
+        print(result)
 
-        if self.rightChild:
-            self.rightChild.printPreOrder()
+    def printPostOrder(self, node, result = []):
 
-    def printPostOrder(self):
+        if node is not None:
+            self.printPostOrder(node.leftChild, result)
+            self.printPostOrder(node.rightChild, result)
+            result.append(node.data)
 
-        if self.leftChild:
-            self.leftChild.printPostOrder()
-
-        if self.rightChild:
-            self.rightChild.printPostOrder()
-
-        print(self.data)
+        print(result)
 
 
 bin_tree = binaryTree()
-root = bin_tree.createNode(1)
-bin_tree.insert(root, 2)
-bin_tree.insert(root, 3)
+root = bin_tree.createNode(5)
+bin_tree.insert(root, 1)
 bin_tree.insert(root, 4)
-bin_tree.insert(root, 5)
-# bin_tree.printInorder()
+bin_tree.insert(root, 3)
+bin_tree.insert(root, 2)
+# bin_tree.printInorder(root)
+bin_tree.printPreOrder(root)
+# bin_tree.printPostOrder(root)
