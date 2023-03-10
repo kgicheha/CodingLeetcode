@@ -200,7 +200,6 @@ class LinkedList:
 
 
 
-
 my_llist = LinkedList()
 my_llist.append(1)
 my_llist.append(2)
