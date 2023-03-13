@@ -16,7 +16,8 @@
         store the item into the items_lower array
 
 
-
+5. return quickSort(items_lower) + [pivot] + quickSort(item_greater)
+    this will recursively run the function for the two arrays until they get to the base case
 
 '''
 
