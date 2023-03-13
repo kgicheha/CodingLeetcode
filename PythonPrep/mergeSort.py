@@ -1,3 +1,13 @@
+'''
+STEPS:
+1. splits array in half
+2. Call Merge Sort on each half to sort them recursively
+3. Merge both sorted halves into one sorted array
+
+
+
+'''
+
 def mergeSort(arr):
     print(arr)
 
