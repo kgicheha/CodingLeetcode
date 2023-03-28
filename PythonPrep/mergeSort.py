@@ -44,3 +44,7 @@ def merge_two_sorted_lists(a,b):
 
 arr = [3,2,6,7,1,2,4]
 mergeSort(arr)
+
+a = [3,2,6]
+b = [7,1,2,4]
+print(merge_two_sorted_lists(a,b))
