@@ -26,7 +26,7 @@ def merge_two_sorted_lists(a,b):
     i = j = 0
     while i < len_a and j < len_b:
         if a[i] <= b[j]:
-            sorted_list.append(a[j])
+            sorted_list.append(a[i])
             i += 1
         else:
             sorted_list.append(b[j])
