@@ -12,7 +12,18 @@ Space Complexity:
 def mergeSort(arr):
     print(arr)
 
+    if len(arr) <= 1:
+        return arr
 
+    mid = len(arr) // 2
+
+    leftArr = arr[:mid]
+    rightArr = arr[mid:]
+
+    leftArr = mergeSort(leftArr)
+    rightArr = mergeSort(rightArr)
+
+    return merge_two_sorted_lists(leftArr, rightArr)
 
 
 
