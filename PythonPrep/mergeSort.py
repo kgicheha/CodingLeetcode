@@ -26,19 +26,18 @@ def mergeSort(arr):
     return merge_two_sorted_lists(leftArr, rightArr)
 
 
-def merge_two_sorted_lists(leftArr,rightArr):
+def merge_two_sorted_lists(a,b):
     sorted_list = []
 
-    len_a = len(leftArr)
-    len_b = len(rightArr)
+    len_a = len(a)
+    len_b = len(b)
 
 
     i = 0   #left_arr index
     j = 0   #right array index
-    k = 0   #merged array index
 
     while i < len_a and j < len_b:
-        if a[i] <= b[j]:
+        if a[i] < b[j]:
             sorted_list.append(a[i])
             i += 1
         else:
@@ -53,11 +52,9 @@ def merge_two_sorted_lists(leftArr,rightArr):
         j += 1
 
 
-    return sorted_list
+    print(sorted_list)
 
 arr = [3,2,6,7,1,2,4]
 mergeSort(arr)
 
-a = [3,2,6]
-b = [7,1,2,4]
-print(merge_two_sorted_lists(a,b))
+
