@@ -5,7 +5,8 @@ STEPS:
 3. Merge both sorted halves into one sorted array
 4.
 
-
+TIME Comlexity: O(n log n)
+Space Complexity:
 '''
 
 def mergeSort(arr):
