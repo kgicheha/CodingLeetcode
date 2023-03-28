@@ -10,7 +10,6 @@ Space Complexity:
 '''
 
 def mergeSort(arr):
-    print(arr)
 
     if len(arr) <= 1:
         return arr
@@ -20,21 +19,24 @@ def mergeSort(arr):
     leftArr = arr[:mid]
     rightArr = arr[mid:]
 
-    leftArr = mergeSort(leftArr)
-    rightArr = mergeSort(rightArr)
+    # recursion on the left and right array
+    mergeSort(leftArr)
+    mergeSort(rightArr)
 
     return merge_two_sorted_lists(leftArr, rightArr)
 
 
-
-def merge_two_sorted_lists(a,b):
+def merge_two_sorted_lists(leftArr,rightArr):
     sorted_list = []
 
-    len_a = len(a)
-    len_b = len(b)
+    len_a = len(leftArr)
+    len_b = len(rightArr)
 
 
-    i = j = 0
+    i = 0   #left_arr index
+    j = 0   #right array index
+    k = 0   #merged array index
+
     while i < len_a and j < len_b:
         if a[i] <= b[j]:
             sorted_list.append(a[i])
