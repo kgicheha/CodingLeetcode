@@ -19,6 +19,14 @@ Output: 2
 Explanation: 1 is in the array but 2 is missing.
 '''
 
+'''
+GIVEN:
+    unsorted integer array
+STEPS:
+RESULT:
+    return the smallest positive integer
+'''
+
 def firstMissingPositive(nums):
     print(nums)
 
