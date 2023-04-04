@@ -22,6 +22,13 @@ grade = 29 do not round (result is less than 40)
 grade = 57 do not round (60 - 57 is 3 or higher)
 '''
 
+'''
+GIVEN: an array of grades
+STEPS:
+RESULT:
+    return the grades after rounding as appropriate
+
+'''
 
 
 def gradingStudents(grades):
