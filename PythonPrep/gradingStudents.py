@@ -25,6 +25,9 @@ grade = 57 do not round (60 - 57 is 3 or higher)
 '''
 GIVEN: an array of grades
 STEPS:
+    if grade is more than or equal to 38:
+        if the remainder of the grade when divided by 5 is equal to either 3 or 4:
+            add
 RESULT:
     return the grades after rounding as appropriate
 
@@ -32,9 +35,15 @@ RESULT:
 
 
 def gradingStudents(grades):
-    for i in range(0, len(grades)):
-        print(grades[i])
+    for i in range(len(grades)):
+
+        if grades[i] >= 38:
+            if grades[i] % 5 == 3 or grades[i] % 5 == 4:
+                grades[i] = grades[i] + (5 - grades[i] % 5)
+
+    return grades
+
 
 
 grades = [73, 67, 38, 33]
-gradingStudents(grades)
+print(gradingStudents(grades))
