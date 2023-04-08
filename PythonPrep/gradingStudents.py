@@ -27,7 +27,7 @@ GIVEN: an array of grades
 STEPS:
     if grade is more than or equal to 38:
         if the remainder of the grade when divided by 5 is equal to either 3 or 4:
-            add
+            round up the number
 RESULT:
     return the grades after rounding as appropriate
 

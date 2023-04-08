@@ -6,7 +6,7 @@ STEPS:
 4.
 
 TIME Comlexity: O(n log n)
-Space Complexity:
+Space Complexity: O(1)
 '''
 
 def mergeSort(arr):
