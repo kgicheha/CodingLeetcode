@@ -6,6 +6,11 @@ https://www.algoexpert.io/questions/validate-subsequence
 GIVEN:
     2 non-empty arrays
 STEPS:
+    create two pointers:
+        1. keeps track of where you are in the 1st array
+        2. keeps track of where you are in the sub sequence array
+
+
 RETURN
     return True, if the sequence is in the first array
     else return False
