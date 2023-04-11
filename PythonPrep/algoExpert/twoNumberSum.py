@@ -1,3 +1,14 @@
+'''
+Question link:
+https://www.algoexpert.io/questions/two-number-sum
+'''
+
+'''
+GIVEN:
+STEPS:
+RESULT
+'''
+
 def twoNumberSum(array, targetSum):
     # Write your code here.
     print(array)
