@@ -10,6 +10,15 @@ STEPS:
         1. keeps track of where you are in the 1st array
         2. keeps track of where you are in the sub sequence array
 
+    traverse through the two array, while the two pointers are less than the len of the array:
+        if the current number in the 1st array is equal to the current number in the subsquence array:
+            increment the sequence pointer by 1
+
+        else increment the pointer of the array index by 1 as you're searching for the number that equal to the current number in the sequence array
+
+    if the sequence index is equal to the length of the sequence array, return True
+        this means that all the numbers in the sequence array are in the 1st array.
+
 
 RETURN
     return True, if the sequence is in the first array
