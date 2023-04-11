@@ -32,13 +32,24 @@ def isValidSubsequence(array, sequence):
     arrIndex = 0
     seqIndex = 0
 
-    while arrIndex < len(array) and seqIndex < len(sequence):
+    # USING WHILE LOOP
+    # while arrIndex < len(array) and seqIndex < len(sequence):
 
-        if array[arrIndex] == sequence[seqIndex]:
+    #     if array[arrIndex] == sequence[seqIndex]:
+    #         seqIndex += 1
+
+    #     arrIndex += 1
+    # return seqIndex == len(sequence)
+
+    # USING FOR LOOP
+    for value in array:
+        if seqIndex == len(sequence):
+            break
+        if sequence[seqIndex] == value:
             seqIndex += 1
 
-        arrIndex += 1
     return seqIndex == len(sequence)
+
 
 array = [5, 1, 22, 25, 6, -1, 8, 10]
 sequence = [5, 1, 22, 25, 6, -1, 8, 10]
