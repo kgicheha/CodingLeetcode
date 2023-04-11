@@ -9,6 +9,9 @@ STEPS:
 RETURN
     return True, if the sequence is in the first array
     else return False
+
+TIME COMPLEXITY: O(N) --> have to traverse entire array
+SPACE COMPLEXITY: O(1) --> we dont have to create any new data structure
 '''
 
 def isValidSubsequence(array, sequence):
