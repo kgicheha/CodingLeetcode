@@ -16,6 +16,7 @@ def twoNumberSum(array, targetSum):
         # Time Complexity: O(n)
         # Space Complexity: O(n)
     seen = {}
+    result = []
 
     for value in array:
         dif = targetSum - value
@@ -25,7 +26,7 @@ def twoNumberSum(array, targetSum):
         else:
             result = [seen[dif], dif]
             return result
-    return []
+    return result
 
 
     # SOLUTION 2:
