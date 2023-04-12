@@ -1,3 +1,14 @@
+'''
+Question Link:
+https://www.algoexpert.io/questions/tournament-winner
+'''
+'''
+GIVEN:
+STEPS:
+RESULTS:
+
+'''
+
 def tournamentWinner(competitions, results):
     print(results)
 
