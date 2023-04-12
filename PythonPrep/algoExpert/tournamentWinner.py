@@ -33,30 +33,37 @@ RESULTS:
 def tournamentWinner(competitions, results):
 
     scoreCount = {}
+    pointer = 0
 
-    for currentGame in range(len(competitions)):
-        homeTeam = competitions[currentGame][0]
-        awayTeam = competitions[currentGame][1]
+    for currentGame in competitions:
+        homeTeam = currentGame[0]
+        awayTeam = currentGame[1]
         print("HomeTeam",homeTeam)
         print("AwayTeam",awayTeam)
 
 
-        if results[currentGame] == 1:
-            if competitions[currentGame][0] not in scoreCount:
-                scoreCount[competitions[currentGame][0]] = 1
+        if results[pointer] == 1:
+            if homeTeam not in scoreCount:
+                scoreCount[homeTeam] = 1
             else:
-                scoreCount[competitions[currentGame][0]] += 1
-        elif results[currentGame] == 0:
-            if competitions[currentGame][1] not in scoreCount:
-                scoreCount[competitions[currentGame][1]] = 1
+                scoreCount[homeTeam] += 1
+        elif results[pointer] == 0:
+            if awayTeam not in scoreCount:
+                scoreCount[awayTeam] = 1
             else:
-                scoreCount[competitions[currentGame][1]] += 1
+                scoreCount[awayTeam] += 1
+
+        pointer += 1
 
     print(scoreCount)
 
-    max_key = max(scoreCount, key= scoreCount.get)
+    winner = max(scoreCount, key = scoreCount.get)
 
-    return max_key
+    # for key, value in scoreCount.items():
+    #     if value == max(scoreCount.values()):
+    #         max_key = key
+
+    return winner
 
 
 
