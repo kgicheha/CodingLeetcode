@@ -13,9 +13,19 @@ STEPS:
         homeTeam will be the first element in each sub array
         awayTeam will be the second element in each sub array
 
-        if the results of the game is 1:
-            this means that the
+        if the results of the game equals 1:
+            this means that the hometeam won:
+                so you need to increment the team score if it already exists in the scoreCount dictionary
+                else:
+                    add it to the score count with a score of 1
+        else if the results of the game equals 0:
+            this means the away team won
+            so you need to increment the team score if it already exists in the scoreCount dictionary
+                else:
+                    add it to the score count with a score of 1
 
+
+    return the key with the max value
 RESULTS:
     return winner of the tournament
 '''
