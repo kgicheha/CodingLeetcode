@@ -19,16 +19,29 @@ def sortedSquaredArray(array):
 
     # SOLUTION 1: NON-DESTRUCTIVE USING EXTRA SPACE
         # 0(n) time complexity | O(n) space complexity
-    result = []
+    # result = []
 
+    # for value in array:
+    #     squared = value * value
+    #     result.append(squared)
+
+    # result.sort()
+    # return result
+
+    # SOLUTION 2: DESTRUCTIVE APPROACH USING POINTERS
+        # O(n) time complexity | O(1) space complexity
+
+    lp = 0
     for value in array:
         squared = value * value
-        result.append(squared)
 
-    result.sort()
-    return result
+        array[lp] = squared
 
-    #
+        lp += 1
+
+    array.sort()
+
+    return array
 
 array = [1,2,3,5,6,8,9]
 print(sortedSquaredArray(array))
