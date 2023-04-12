@@ -12,7 +12,8 @@ RESULT:
 '''
 
 def twoNumberSum(array, targetSum):
-    # SOLUTION 1: USING AN OBJECT
+
+    # SOLUTION 1: USING AN HASH TABLE
         # Time Complexity: O(n)
         # Space Complexity: O(n)
     seen = {}
