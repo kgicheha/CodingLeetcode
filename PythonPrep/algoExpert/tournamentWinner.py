@@ -57,13 +57,14 @@ def tournamentWinner(competitions, results):
 
     print(scoreCount)
 
-    winner = max(scoreCount, key = scoreCount.get)
+    # winner = max(scoreCount, key = scoreCount.get)
 
-    # for key, value in scoreCount.items():
-    #     if value == max(scoreCount.values()):
-    #         max_key = key
+    for key, value in scoreCount.items():
+        if value == max(scoreCount.values()):
+            winner = key
+            return winner
 
-    return winner
+    # return winner
 
 
 
