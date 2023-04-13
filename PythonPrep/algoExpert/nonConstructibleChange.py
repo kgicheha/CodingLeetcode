@@ -21,8 +21,9 @@ def nonConstructibleChange(coins):
         if coin > currentCoinChange + 1:
             return currentCoinChange + 1
         else:
-            return change + 1
+            currentCoinChange += coin
 
+    return currentCoinChange + 1
 
 #  1, 1, 2, 3, 5, 7, 22
 
