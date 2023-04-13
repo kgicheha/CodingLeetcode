@@ -9,6 +9,15 @@ GIVEN:
 STEPS:
     sort the given coins array
     initialize a vairable that keeps track of the sum of the coins as you iterate through given coins array
+
+    traverse given coins array:
+        if the current coin is greater than the sum of all the coins that you've seen so far + 1:
+            return the sum of all the coins that you've seen so far + 1
+        else:
+            add the coin to the current Sum of the coins
+
+    if you've traverse the entire coin array and didnt get to the if statement:
+        return the sum of all the coins + 1
 RESULT:
     return the minimum amount of change (minimum sum of money) you CANNOT create
 '''
