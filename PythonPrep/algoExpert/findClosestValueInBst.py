@@ -8,6 +8,8 @@ GIVEN:
     1. binary search tree
     2. target integer value
 STEPS:
+    if target value is LESS than the value of the current node, go to the LEFT child
+    if target value is GREATER than the value of the current node, go to the RIGHT child
 RESULT:
     the closest value to that target value contained in the BST
 
