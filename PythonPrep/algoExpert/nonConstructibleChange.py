@@ -7,6 +7,8 @@ https://www.algoexpert.io/questions/non-constructible-change
 GIVEN:
     array of postive values that represent the coins you have.
 STEPS:
+    sort the given coins array
+    initialize a vairable that keeps track of the sum of the coins as you iterate through given coins array
 RESULT:
     return the minimum amount of change (minimum sum of money) you CANNOT create
 '''
