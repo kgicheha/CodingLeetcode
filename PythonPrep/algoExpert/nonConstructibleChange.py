@@ -17,7 +17,11 @@ def nonConstructibleChange(coins):
     change = 0
 
     for value in coins:
-        change += value
+        curSum = change + value
+        if change < curSum:
+            change += value
+        # elif change
+
     print(change)
 
 
