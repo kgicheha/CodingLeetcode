@@ -14,16 +14,17 @@ RESULT:
 def nonConstructibleChange(coins):
     # Write your code here.
     coins.sort()
-    change = 0
+    currentCoinChange = 0
 
-    for value in coins:
-        curSum = change + value
-        if change < curSum:
-            change += value
-        # elif change
+    for coin in coins:
 
-    print(change)
+        if coin > currentCoinChange + 1:
+            return currentCoinChange + 1
+        else:
+            return change + 1
 
+
+#  1, 1, 2, 3, 5, 7, 22
 
 coins = [5,7,1,1,2,3,22]
 print(nonConstructibleChange(coins))
