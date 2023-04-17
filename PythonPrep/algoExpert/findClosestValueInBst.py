@@ -17,9 +17,12 @@ STEPS:
 
     calculate the absolute minimum difference which equals target - tree.value
     calculate the absolute current difference which equals target - value of the current Node
-    initialize closest value to 0
+    if the minimum difference > current difference:
+        set the current Node Value as the current value
     if target value is LESS than the value of the current node, go to the LEFT child
     elif target value is GREATER than the value of the current node, go to the RIGHT child
+    else:
+        return the closest value
 RESULT:
     the closest value to that target value contained in the BST
 
