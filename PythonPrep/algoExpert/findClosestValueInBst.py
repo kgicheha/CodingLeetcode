@@ -8,7 +8,15 @@ GIVEN:
     1. binary search tree
     2. target integer value
 STEPS:
-    initialize minimum absolute difference to 0
+    create helper function then pass in the given tree, target, and the tree.value
+
+    BASE CASE:
+        if tree None:
+            return tree.value
+
+
+    calculate the absolute minimum difference which equals target - tree.value
+    calculate the absolute current difference which equals target - value of the current Node
     initialize closest value to 0
     if target value is LESS than the value of the current node, go to the LEFT child
     elif target value is GREATER than the value of the current node, go to the RIGHT child
@@ -29,19 +37,18 @@ def findClosestValueInBst(tree, target):
 
 
 def findClosestValueInBstHelper(tree, target, closest):
-    # print(tree)
-    currentNodeValue = tree.value
-    min_difference = float("inf")
-    current_difference = abs(target - currentNodeValue)
-
     if tree is None:
         return closest
-    if abs(min_difference) > current_difference:
+
+    min_difference = abs(target - closest)
+    current_difference = abs(target - tree.value)
+
+    if min_difference > current_difference:
         closest = tree.value
-    elif target < currentNodeValue:
+    elif target < tree.value:
         return findClosestValueInBstHelper(tree.left, target, closest)
-    elif target > currentNodeValue:
-        return findClosestValueInBstHelper(tree.right, target, closest)
+    elif target > tree.value:
+        return findClosestValueInBstHelper(tree.right, target, tree.value)
     else:
         return closest
 
