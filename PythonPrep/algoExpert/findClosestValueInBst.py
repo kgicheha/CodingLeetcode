@@ -24,10 +24,39 @@ class BST:
 
 
 def findClosestValueInBst(tree, target):
-    print(tree)
-    min_difference = 0
-    closest_value = 0
+    return findClosestValueInBstHelper(tree, target, tree.value)
+
+
+
+def findClosestValueInBstHelper(tree, target, closest):
+    # print(tree)
+    currentNodeValue = tree.value
+    min_difference = float("inf")
+    current_difference = abs(target - currentNodeValue)
+
+    if tree is None:
+        return closest
+    if abs(min_difference) > current_difference:
+        closest = tree.value
+    elif target < currentNodeValue:
+        return findClosestValueInBstHelper(tree.left, target, closest)
+    elif target > currentNodeValue:
+        return findClosestValueInBstHelper(tree.right, target, closest)
+    else:
+        return closest
 
 
 
 
+tree = BST(10)
+tree.left = BST(5)
+tree.left.left = BST(2)
+tree.left.right = BST(5)
+tree.left.left.left = BST(1)
+tree.right = BST(15)
+tree.right.right = BST(22)
+tree.right.left = BST(13)
+tree.right.left.right = BST(14)
+
+target = 12
+print(findClosestValueInBst(tree, target))
