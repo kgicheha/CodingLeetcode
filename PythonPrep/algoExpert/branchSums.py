@@ -7,7 +7,7 @@ https://www.algoexpert.io/questions/branch-sums
 
 '''
 GIVEN:
-    root of a binary tre
+    root of a binary tree
 STEPS:
     traverse through each branch
 
@@ -22,14 +22,23 @@ class BinaryTree:
         self.right = None
 
 def branchSums(root):
+    result = []
+    sumHelper(root, result, currentSum = 0)
 
-    return sumHelper(root, result = [])
+    return result
 
-def sumHelper(root, result):
+def sumHelper(node, result, currentSum):
+    if node is None:
+        return
 
-    while root is not None:
-        sumHelper(root.left, result)
-        print(root.value)
+    currentSum += node.value
+
+    if node.left is None and node.right is None:
+        result.append(currentSum)
+        return
+
+    sumHelper(node.left, result, currentSum)
+    sumHelper(node.right, result, currentSum)
 
 
 
