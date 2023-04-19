@@ -1,3 +1,14 @@
+'''
+Question Link:
+https://www.algoexpert.io/questions/move-element-to-end
+'''
+
+'''
+GIVEN:
+STEPS:
+RESULT:
+'''
+
 def moveElementToEnd(array, toMove):
     print(array)
 
