@@ -23,9 +23,8 @@ STEPS:
         elif currentvalue == given integer and current value is equal to value at the right pointer:
             decrement right pointer by 1
 
-
-
-
+        elif currentValue != given integer:
+            increment left pointer by 1
 
 RESULT:
     return a mutated array with the given integer at the end
@@ -52,20 +51,6 @@ def moveElementToEnd(array, toMove):
 
     return array
 
-
 array = [2, 1, 2, 2, 2, 3, 4, 2]
 toMove = 2
 print(moveElementToEnd(array, toMove))
-
-
-
-'''
-traverse sorted array
-        once you get to the first appearance of the given integer:
-            place pointer there
-            increase the size of the window until you get to the last appearance of the given integer
-
-            slice the window out of the array
-            store the rest of the integers in one variable
-            store the window of the given integer in another variable
-'''
