@@ -1,3 +1,16 @@
+'''
+Question Link:
+https://www.algoexpert.io/questions/four-number-sum
+'''
+
+'''
+GIVEN:
+STEPS:
+RESULT:
+
+'''
+
+
 def fourNumberSum(array, targetSum):
     print(array)
 
