@@ -32,10 +32,42 @@ RESULTS:
     array of characters that are common to all the strings
 
 '''
+# SOLUTION 2
+
+def commonCharacters(strings):
+    strings.sort()
+
+    smallestStringSet = set(strings[0])
+    uniqueCharacters = {}
+
+    for string in strings:
+        checkCommonCharacters(smallestStringSet, string, uniqueCharacters)
+
+    print(uniqueCharacters)
+
+def checkCommonCharacters(smallestStringSet, string, uniqueCharacters):
+
+    currentStringSet = set(string)
+
+    print(currentStringSet)
+
+    for char in currentStringSet:
+        if char in smallestStringSet:
+            uniqueCharacters[char] = 1
+        # else:
+        #     del uniqueCharacters[char]
+
+
+
+'''
+SOLUTION 1
 
 def commonCharacters(strings):
     result = []
     charDictionary = {}
+
+    strings.sort()
+    print(strings)
 
     for string in strings:
         charCheck(string, charDictionary)
@@ -49,18 +81,16 @@ def commonCharacters(strings):
 
 def charCheck(string, charDictionary):
 
-    seen = set()
+    uniqueCharacters = set(string)
 
-    for char in string:
-        if char not in seen:
-            seen.add(char)
-
-    for char in seen:
+    for char in uniqueCharacters:
         if char not in charDictionary:
             charDictionary[char] = 1
 
         else:
             charDictionary[char] += 1
 
-strings = ["abc", "bcd", "cbaccd"]
+'''
+
+strings = ["bcd", "cbaccd", "abc"]
 print(commonCharacters(strings))
