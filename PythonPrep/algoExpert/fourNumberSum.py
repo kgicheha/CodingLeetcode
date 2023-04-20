@@ -5,8 +5,12 @@ https://www.algoexpert.io/questions/four-number-sum
 
 '''
 GIVEN:
+    array of distinct integers
+    targetSum integer
 STEPS:
+
 RESULT:
+    return a 2d array of all the quadruplets in no particular order
 
 '''
 
