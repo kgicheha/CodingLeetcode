@@ -21,7 +21,6 @@ RESULTS:
 def minimumWaitingTime(queries):
 
     queries.sort()
-    print(queries)
 
     min_wait_time = 0
 
