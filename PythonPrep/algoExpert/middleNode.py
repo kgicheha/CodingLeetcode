@@ -48,7 +48,7 @@ def middleNode(linkedList):
 
 root = LinkedList(2)
 root.next = LinkedList(7)
-# root.next.next = LinkedList(3)
-# root.next.next.next = LinkedList(5)
+root.next.next = LinkedList(3)
+root.next.next.next = LinkedList(5)
 
 print(middleNode(root))
