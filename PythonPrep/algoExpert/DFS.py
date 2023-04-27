@@ -20,6 +20,11 @@ STEPS:
 
 RESULTS:
     return the input array after storing all the nodes' names
+
+
+Time Complexity --> O(v + e) --> v represenents the number of vertices or nodes in the graph
+                    --> e represents the edges or the interconnected lines
+Space Complexity --> O(v) --> represent the number of vertices in the tree
 '''
 
 class Node:
