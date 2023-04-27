@@ -12,3 +12,5 @@ root.next = LinkedList(4)
 root.next.next = LinkedList(4)
 root.next.next.next = LinkedList(5)
 root.next.next.next.next = LinkedList(6)
+
+print(removeDuplicatesFromLinkedList(root))
