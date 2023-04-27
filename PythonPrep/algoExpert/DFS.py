@@ -8,6 +8,14 @@ class Node:
         return self
 
     def depthFirstSearch(self, array):
+
+        if len(array) <= 1:
+            return self.name
+        else:
+
         pass
 
 
+root = Node("A")
+root.addChild = ["B", "E", "F"]
+print(root.children)
