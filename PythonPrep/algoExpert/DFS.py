@@ -1,12 +1,25 @@
 '''
 Question Link:
 https://www.algoexpert.io/questions/depth-first-search
+
+DEPTH FIRST SEARCH:
+    Traverse a tree from LEFT to RIGHT
 '''
 
 '''
 GIVEN:
+    1. a node class
+    2. empty array
 STEPS:
+
+    add the name of the node to the given empty array
+
+    call the function RECURSIVELY each child and pass in the given array as the argument.
+
+    return the given array
+
 RESULTS:
+    return the input array after storing all the nodes' names
 '''
 
 class Node:
@@ -20,13 +33,25 @@ class Node:
 
     def depthFirstSearch(self, array):
 
-        if len(array) <= 1:
-            return self.name
-        else:
+        array.append(self.name)
 
-        pass
+        for child in self.children:
+
+                child.depthFirstChild(array)
+
+        return array
+
+
+
+
 
 
 root = Node("A")
-root.addChild = ["B", "E", "F"]
-print(root.children)
+child1 = "B"
+child2 = "C"
+child3 = "D"
+root.addChild(child1)
+root.addChild(child2)
+root.addChild(child3)
+
+print(root.depthFirstSearch)
