@@ -4,7 +4,9 @@ https://www.algoexpert.io/questions/bst-construction
 '''
 
 '''
-
+GIVEN:
+STEPS:
+RESULT:
 '''
 
 class BST:
