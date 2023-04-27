@@ -8,7 +8,7 @@ def removeDuplicatesFromLinkedList(linkedList):
 
 
 root = LinkedList(1)
-root.next = LinkedList(3)
+root.next = LinkedList(4)
 root.next.next = LinkedList(4)
 root.next.next.next = LinkedList(5)
 root.next.next.next.next = LinkedList(6)
