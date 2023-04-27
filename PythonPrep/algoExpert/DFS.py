@@ -1,3 +1,14 @@
+'''
+Question Link:
+https://www.algoexpert.io/questions/depth-first-search
+'''
+
+'''
+GIVEN:
+STEPS:
+RESULTS:
+'''
+
 class Node:
     def __init__(self, name):
         self.children = []
