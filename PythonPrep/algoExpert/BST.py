@@ -16,21 +16,33 @@ class BST:
 
         while True:
 
-            if value < currentNode:
+            if value < currentNode.value:
                 if currentNode.left is None:
                     currentNode.left = BST(value)
+                    break
                 else:
                     currentNode = currentNode.left
 
             if value > currentNode:
                 if currentNode.right is None:
                     currentNode.right = BST(value)
+                    break
                 else:
                     currentNode = currentNode.right
         return self
 
     def contains(self, value):
-        print(value)
+
+        currentNode = self
+
+        if value < currentNode.value:
+            currentNode = currentNode.left
+        elif value > currentNode.value:
+            currentNode = currentNode.right
+        else:
+            return True
+
+        return False
 
     def remove(self, value):
         return self
@@ -46,7 +58,7 @@ INSERTION USING ITERATION
 
     while True:
 
-        if the given value is less to the currentNode:
+        if the given value is less to the currentNode.value:
             check to see if the left child is empty
 
             if the left child is empty:
@@ -69,4 +81,26 @@ INSERTION USING ITERATION
 
 Average Time Complexity --> O(log n) || Space Complexity --> O(1)
 Worst Time Complexity --> O(n) || Space Complexity --> O(1)
+'''
+
+'''
+CHECK TO SEE IF A BST CONTAINS A VALUE using ITERATION
+
+    initialize currentNode to self
+
+    if given value < currentNode.value:
+        search the left branch
+
+    else if given value > currentNode.value:
+        seearch the right branch
+
+    else:
+        return True meaning the Node has been found
+
+    return False if the value is not found
+
+'''
+
+'''
+
 '''
