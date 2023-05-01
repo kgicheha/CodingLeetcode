@@ -14,7 +14,7 @@ class BST:
 
         currentNode = self
 
-        while True:
+        while currentNode != None:
 
             if value < currentNode.value:
                 if currentNode.left is None:
@@ -35,12 +35,14 @@ class BST:
 
         currentNode = self
 
-        if value < currentNode.value:
-            currentNode = currentNode.left
-        elif value > currentNode.value:
-            currentNode = currentNode.right
-        else:
-            return True
+        while currentNode != None:
+
+            if value < currentNode.value:
+                currentNode = currentNode.left
+            elif value > currentNode.value:
+                currentNode = currentNode.right
+            else:
+                return True
 
         return False
 
@@ -79,8 +81,8 @@ INSERTION USING ITERATION
 
     return self
 
-Average Time Complexity --> O(log n) || Space Complexity --> O(1)
-Worst Time Complexity --> O(n) || Space Complexity --> O(1)
+#  Average Time Complexity --> O(log n) || Space Complexity --> O(1)
+#  Worst Time Complexity --> O(n) || Space Complexity --> O(1)
 '''
 
 '''
@@ -88,17 +90,21 @@ CHECK TO SEE IF A BST CONTAINS A VALUE using ITERATION
 
     initialize currentNode to self
 
-    if given value < currentNode.value:
-        search the left branch
+    while currentNode != None
+        if given value < currentNode.value:
+            search the left branch
 
-    else if given value > currentNode.value:
-        seearch the right branch
+        else if given value > currentNode.value:
+            seearch the right branch
 
-    else:
-        return True meaning the Node has been found
+        else:
+            return True meaning the Node has been found
 
     return False if the value is not found
 
+
+#  Average Time Complexity --> O(log n) || Space Complexity --> O(1)
+#  Worst Time Complexity --> O(n) || Space Complexity --> O(1)
 '''
 
 '''
