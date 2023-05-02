@@ -9,20 +9,19 @@ GIVEN:
     2. target integer
 STEPS:
     initialize left pointer to 0
-    initialize right pointer to length of the array
+    initialize right pointer to the last value in the array
 
-    while left pointer is < right pointer:
+    while left pointer is <= right pointer:
 
         initialize a mid pointer index:
             length of array // 2
 
-
         if middle value is equal to the target value:
             return its index
 
-        elif middle value is < target value:
+        elif target value < middle value:
             set right pointer to equal middle index - 1
-        elif middle value > target value:
+        elif target value > middle value:
             set the left pointer equal to middle index + 1
 
 
@@ -33,30 +32,30 @@ RESULTS:
         return its index:
     else:
         return -1
+
+
+TIME COMPLEXITY: O(log N) || Space Complexity: O(1)
 '''
 
 def binarySearch(array, target):
     lp = 0
     rp = len(array) - 1
 
-    return binarySearchHelper(target, array, lp, rp)
+    while lp <= rp:
 
-def binarySearchHelper(array, target, lp, rp):
+        middleIndex = (lp + rp) // 2
 
-    middleIndex = (lp + rp) // 2
+        if array[middleIndex] == target:
+            return middleIndex
 
-    if array[middleIndex] == target:
-        return middleIndex
+        elif target < array[middleIndex] :
+            rp = middleIndex - 1
 
-    elif array[middleIndex] < target:
-        rp = middleIndex - 1
-        return binarySearchHelper(array, target, lp, rp)
-
-    elif array[middleIndex] > target:
-        lp = middleIndex + 1
-        return binarySearch(array, target, lp, rp)
+        elif target > array[middleIndex]:
+            lp = middleIndex + 1
 
     return -1
+
 
 array = [0, 1, 21, 33, 45, 45, 61, 71, 72, 73]
 target = 33
