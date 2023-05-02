@@ -1,3 +1,14 @@
+'''
+Question Link:
+https://www.algoexpert.io/questions/binary-search
+'''
+
+'''
+GIVEN:
+STEPS:
+RESULTS
+'''
+
 def binarySearch(array, target):
     pass
 
