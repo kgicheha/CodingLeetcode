@@ -36,8 +36,28 @@ RESULTS:
 '''
 
 def binarySearch(array, target):
-    pass
+    lp = 0
+    rp = len(array) - 1
+
+    return binarySearchHelper(target, array, lp, rp)
+
+def binarySearchHelper(array, target, lp, rp):
+
+    middleIndex = (lp + rp) // 2
+
+    if array[middleIndex] == target:
+        return middleIndex
+
+    elif array[middleIndex] < target:
+        rp = middleIndex - 1
+        return binarySearchHelper(array, target, lp, rp)
+
+    elif array[middleIndex] > target:
+        lp = middleIndex + 1
+        return binarySearch(array, target, lp, rp)
+
+    return -1
 
 array = [0, 1, 21, 33, 45, 45, 61, 71, 72, 73]
 target = 33
-
+print(binarySearch(array, target))
