@@ -41,28 +41,33 @@ array2 = [3, 4, 5]
 
 def mergeArrays(array1, array2):
 
-    # mergedArray = array1 + array2
-    # mergedArray.sort()
-    # return mergedArray
-
-    results = []
+    results = [None] * (array1 + array2)
     pointer1 = 0
     pointer2 = 0
+    pointer3 = 0
 
     while pointer1 <= len(array1) - 1 and pointer2 <= len(array2) - 1:
 
         if array1[pointer1] < array2[pointer2]:
-            results.append(array1[pointer1])
+            results[pointer3] = array1[pointer1]
             pointer1 += 1
+            pointer3 += 1
 
-        elif array1[pointer1] > array2[pointer2]:
-            results.append(array2[pointer2])
-            pointer2 += 1
         else:
-            results.append(array1[pointer1])
-            results.append(array2[pointer2])
-            pointer1 += 1
+            results[pointer3] = array2[pointer2]
             pointer2 += 1
+            pointer3 += 1
+
+    while pointer1 <= len(array1) - 1:
+        results[pointer3] = array1[pointer1]
+        pointer1 += 1
+        pointer3 += 1
+
+    while pointer2 <= len(array2) - 1:
+        results[pointer3] = array2[pointer2]
+        pointer2 += 1
+        pointer3 += 1
+
 
     return results
 
