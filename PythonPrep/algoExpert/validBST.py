@@ -7,7 +7,6 @@ https://www.algoexpert.io/questions/validate-bst
 GIVEN:
 STEPS:
 RESULT:
-
 '''
 class BST:
 
@@ -16,5 +15,5 @@ class BST:
         self.left = None
         self.right = None
 
-    def validateBst(value):
+    def validateBst(tree):
         pass
