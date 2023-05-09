@@ -18,6 +18,17 @@ def inOrderTraverse(tree, array):
 
     return array
 
+def preOrderTraversal(tree, array):
+
+    if tree is not None:
+        array.append(tree.value)
+        preOrderTraversal(tree.left, array)
+        preOrderTraversal(tree.right, array)
+
+    return array
+
+
+
 
 
 tree = BST(10)
@@ -28,7 +39,9 @@ tree.left.left.left = BST(1)
 tree.right = BST(15)
 tree.right.right = BST(22)
 
-print(inOrderTraverse(tree, array = []))
+# print(inOrderTraverse(tree, array = []))
+print(preOrderTraversal(tree, array = []))
+
 
 '''
 GIVEN:
