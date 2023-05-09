@@ -19,34 +19,47 @@ def validateBst(tree):
     minValue = float("-inf")
     maxValue = float("inf")
 
-    return validateBstHelper(tree, minValue, maxValue)
+    currentNode = tree
+    return validateBstHelper(currentNode, minValue, maxValue)
 
-def validateBstHelper(tree, minValue, maxValue):
+def validateBstHelper(currentNode, minValue, maxValue):
 
-    if tree is None:
+    if currentNode is None:
         return True
 
-    if tree.value  < minValue or tree.value >= maxValue:
+    if currentNode.value < minValue or currentNode.value >= maxValue:
         return False
 
-    leftChildCheck = validateBstHelper(tree.left, minValue, tree.value)
-    rightChildCheck = validateBstHelper(tree.right, tree.value, maxValue)
+    parentValue = currentNode.value
+
+    leftChildCheck = validateBstHelper(currentNode.left, minValue, parentValue)
+    rightChildCheck = validateBstHelper(currentNode.right, parentValue, maxValue)
 
     return leftChildCheck and rightChildCheck
 
 
-tree = BST(10)
-tree.left = BST(5)
-tree.left.left = BST(2)
-tree.left.right = BST(5)
+# tree = BST(10)
+# tree.left = BST(5)
+# tree.left.left = BST(2)
+# tree.left.right = BST(5)
+# tree.left.left.left = BST(1)
+# tree.right = BST(15)
+# tree.right.left = BST(13)
+# tree.right.right = BST(22)
+# tree.right.left.right = BST(14)
+
+tree = BST(20)
+tree.left = BST(10)
+tree.left.left = BST(5)
+tree.left.right = BST(10)
 tree.left.left.left = BST(1)
-tree.right = BST(15)
-tree.right.left = BST(13)
-tree.right.right = BST(22)
-tree.right.left.right = BST(14)
+tree.right = BST(40)
+tree.right.left = BST(30)
+tree.right.right = BST(50)
 
 
 print(validateBst(tree))
+
 
 
 '''
