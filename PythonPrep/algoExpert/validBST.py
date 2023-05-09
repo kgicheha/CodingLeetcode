@@ -7,24 +7,6 @@ A node is said to be a valid BST node if and only if it satisfies the BST proper
     its value is less than or equal to the values of every node to its right
 '''
 
-'''
-GIVEN:
-    a tree
-STEPS:
-    initialize value to keep track of the parents' value
-
-    if leftChild is not None:
-        check to see if the parents value is GREATER than the leftChilds' value
-    else if rightChild is None:
-        check to see if the parents' value is less than the rightChild's value
-
-        return True if it successfully goes through entire loop
-
-    return False
-RESULT:
-    True if the given tree is valid
-    False if the given tree is invalid
-'''
 class BST:
 
     def __init__(self, value):
@@ -53,12 +35,27 @@ def validateBstHelper(tree, minValue, maxValue):
     return leftChildCheck and rightChildCheck
 
 
+tree = BST(10)
+tree.left = BST(5)
+tree.left.left = BST(2)
+tree.left.right = BST(5)
+tree.left.left.left = BST(1)
+tree.right = BST(15)
+tree.right.left = BST(13)
+tree.right.right = BST(22)
+tree.right.left.right = BST(14)
+
+
+print(validateBst(tree))
+
 
 '''
 A node is said to be a valid BST node if and only if it satisfies the BST property:
     its value is strictly greater than the values of every node to its left
     its value is less than or equal to the values of every node to its right
 
+GIVEN:
+    a tree
 
 STEPS:
 
@@ -77,13 +74,19 @@ STEPS:
 
     using recursion check to see whether the leftChild meets the criteria
         update the maximum Value to the current Nodes' value
-        this will check to ensure than the value of the left Child is be greater than or equal to its parents' NodeValue
+        this will check to ensure than the value of the left Child is less than the value of its parents' NodeValue
 
     using recursion check to see whether the right Child meets the criteria
         update the minimuValue to the current Nodes' value
-        this will check to ensure that the value  right Child is not less than the value of its parents' Node
+        this will check to ensure that the value  right Child is greater than or equal to the value of its parents' Node
 
     return True if it successfully goes throught the entire tree.
 
 
+RESULT:
+    True if the given tree is valid
+    False if the given tree is invalid
+
+Time Complexity: O(n) --> have to traverse entire tree
+Space Complexity: O(d) --> d represents the depth of the longest branch in the given tree
 '''
