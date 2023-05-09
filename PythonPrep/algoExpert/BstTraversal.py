@@ -9,12 +9,16 @@ class BST:
         self.left = None
         self.right = None
 
-def inorderTraverse(tree, array):
+def inOrderTraverse(tree, array):
 
     if tree is not None:
-        inOrderTraverse(tree.leftChild, array)
-        array.append(tree.data)
-        inOrderTraverse(tree.rightChild, array)
+        inOrderTraverse(tree.left, array)
+        array.append(tree.value)
+        inOrderTraverse(tree.right, array)
+
+    return array
+
+
 
 tree = BST(10)
 tree.left = BST(5)
@@ -24,6 +28,7 @@ tree.left.left.left = BST(1)
 tree.right = BST(15)
 tree.right.right = BST(22)
 
+print(inOrderTraverse(tree, array = []))
 
 '''
 GIVEN:
