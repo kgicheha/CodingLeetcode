@@ -76,8 +76,14 @@ STEPS:
         so return False
 
     using recursion check to see whether the leftChild meets the criteria
-        for the leftChild pass in the current Node's value as the maximum Value
-        value of the left Child cannot be
+        update the maximum Value to the current Nodes' value
+        this will check to ensure than the value of the left Child is be greater than or equal to its parents' NodeValue
+
+    using recursion check to see whether the right Child meets the criteria
+        update the minimuValue to the current Nodes' value
+        this will check to ensure that the value  right Child is not less than the value of its parents' Node
+
+    return True if it successfully goes throught the entire tree.
 
 
 '''
