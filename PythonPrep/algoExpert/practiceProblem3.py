@@ -56,9 +56,11 @@ Input: grid = [
     Output = 1
 '''
 
+
 def isIsland(grid):
 
     count = 0
+
     for i in range(len(grid)):
         for j in range(len(grid[i])):
             if grid[i][j] == "1":
@@ -68,16 +70,15 @@ def isIsland(grid):
     return count
 
 def checkisIslandHelper(i, j, grid):
-    if (i < 0) or (i >= len)(grid) or (j < 0) or (j >= len(grid[i])) or grid[i][j] == "0":
-        return
+        if (i < 0) or (i >= len(grid)) or (j < 0) or (j >= len(grid[i])) or (grid[i][j] == "0"):
+            return
 
-    grid[i][j] == "0"
+        grid[i][j] = "0"
 
-    checkisIslandHelper(i - 1, j) #left
-    checkisIslandHelper(i + j, j) #right
-    checkisIslandHelper(i, j + 1) #up
-    checkisIslandHelper(i, j - 1) #down
-
+        checkisIslandHelper(i - 1, j, grid) #left
+        checkisIslandHelper(i + j, j, grid) #right
+        checkisIslandHelper(i, j + 1, grid) #up
+        checkisIslandHelper(i, j - 1, grid) #down
 grid = [
         ["1","0"],
         ["0","0"],
