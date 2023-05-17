@@ -79,6 +79,8 @@ def checkisIslandHelper(i, j, grid):
         checkisIslandHelper(i + j, j, grid) #right
         checkisIslandHelper(i, j + 1, grid) #up
         checkisIslandHelper(i, j - 1, grid) #down
+
+
 grid = [
         ["1","0"],
         ["0","0"],
