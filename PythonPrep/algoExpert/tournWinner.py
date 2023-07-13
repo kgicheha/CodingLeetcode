@@ -42,4 +42,35 @@ EXAMPLE:
 
 
 def tournWinner(competitions, results):
-    print("yes")
+
+    scores = {}
+
+    curResult = 0
+    for competition in competitions:
+        if results[curResult] == 0:
+            if competition[1] in scores:
+                scores[competition[1]] += 3
+            else:
+                scores[competition[1]] = 3
+        else:
+            if competition[0] in scores:
+                scores[competition[0]] += 3
+            else:
+                scores[competition[0]] = 3
+
+        curResult += 1
+
+    highestScore = max(scores.values())
+
+    for key, value in scores.items():
+        if value == highestScore:
+            print(key)
+
+
+competitions = [
+    ["HTML", "C#"],
+    ["C#", "Python"],
+    ["Python", "HTML"]
+]
+results = [0,0,1]
+tournWinner(competitions, results)
