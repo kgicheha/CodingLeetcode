@@ -1,0 +1,2 @@
+def tournWinner():
+    print("yes")
