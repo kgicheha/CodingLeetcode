@@ -28,11 +28,30 @@ RESULT:
 
 
 def optimalFreelancing(jobs):
-    print("yes")
 
+    maxProfit = 0
+
+    currentDay = 1
+
+    currentDayPmt = []
+
+    while currentDay <= 7:
+
+        for job in jobs:
+            if job['deadline'] == currentDay:
+                currentDayPmt.append(job['payment'])
+
+                maxProfit += max(currentDayPmt)
+        # currentDayPmt = []
+            currentDay += 1
+
+    print(currentDayPmt)
+    print(maxProfit)
 jobs =[
     {"deadline": 1, "payment":1},
     {"deadline": 2, "payment":1},
     {"deadline": 2, "payment":2},
 
 ]
+
+optimalFreelancing(jobs)
