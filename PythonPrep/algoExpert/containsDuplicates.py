@@ -14,10 +14,6 @@ STEPS:
 
         return False if it goes through the given array successfully
 
-    SOLUTION 2: 2 POINTER SOLUTION
-        TIME COMPLEXITY: O(N), SPACE COMPLEXITY: O(1)
-        1. initialize left pointer to 0
-        2. initialize right pointer to
 RESULT:
     return True, if any values appears AT LEAST TWICE in the array
     else return False if every element is DISTINCT
