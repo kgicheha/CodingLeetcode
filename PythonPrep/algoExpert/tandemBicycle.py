@@ -5,7 +5,7 @@ https://www.algoexpert.io/questions/tandem-bicycle
 '''
 
 GIVEN:
-    list of 2 positive integers
+    2 lists of positive integers
 STEPS:
     sort the given array in ascending order
 RESULT:
