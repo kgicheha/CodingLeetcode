@@ -13,6 +13,16 @@ STEPS:
     else:
         sort the given resShirtSpeeds in ascending order get the min value while pairing with the blueShirtSpeeds list
     sort the given array in ascending order
+
+    sort the given blueShirtSpeeds in ascending order
+
+    initialize a result variable to 0
+
+    iterate through given lists and pair each number from one list with the number other list
+    store the max value between the two pair to the results variable
+
+    return the result
+
 RESULT:
     if fastest = true,
         return the maximum possible total speed
