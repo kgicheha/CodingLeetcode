@@ -15,18 +15,19 @@ RESULT:
         return the minimum total speed
 '''
 def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
-    redShirtSpeeds.sort()
+    if fastest == 'True':
+        redShirtSpeeds.sort(reverse=True)
+    else:
+        redShirtSpeeds.sort()
+
     blueShirtSpeeds.sort()
 
-    minSpeed = 0
-    maxSpeed = 0
+    result = 0
 
-    for idx in len(redShirtSpeeds):
-        if fastest = 'true':
-            current_redShirt = redShirtSpeeds[-1]
-            current_redShirt
+    for i in range(len(redShirtSpeeds)):
+        result += max(redShirtSpeeds[i],blueShirtSpeeds[i])
 
-    return redShirtSpeeds
+    return result
 
 
 redShirtSpeeds = [5,5,3,9,2]
