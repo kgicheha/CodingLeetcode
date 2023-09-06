@@ -7,6 +7,11 @@ https://www.algoexpert.io/questions/tandem-bicycle
 GIVEN:
     2 lists of positive integers
 STEPS:
+    if the given fastest input is 'True':
+        sort the given redShirtSpeeds list in descending order to pair the largest numbers in that list, with the smallest number in the BlueShirtSpeed list
+            this will help to get the max number
+    else:
+        sort the given resShirtSpeeds in ascending order get the min value while pairing with the blueShirtSpeeds list
     sort the given array in ascending order
 RESULT:
     if fastest = true,
