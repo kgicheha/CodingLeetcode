@@ -14,13 +14,20 @@ for number in the range of 0 to total picks:
 
 def determine_draft_picks(rounds, total_players):
     picks = []
+    current_round = 0
+
     for round in range(1, rounds + 1):
         if round % 2 == 1:
             # Odd-numbered round (4th pick)
-            pick_number = 4 + (round - 1) * total_players
+            pick_number = 3 + (round - 1) * total_players
         else:
             # Even-numbered round (9th pick)
-            pick_number = 9 + (round - 1) * total_players
+            pick_number = 10 + (round - 1) * total_players
+
+        current_round += 1
+        print("Current Round", current_round)
+        print("Pick:", pick_number)
+
         picks.append(pick_number)
 
     return picks
