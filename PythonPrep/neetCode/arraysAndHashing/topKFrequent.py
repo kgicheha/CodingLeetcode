@@ -12,8 +12,8 @@ def topKFrequent(nums, k):
 
     print(numCountDict)
     heap = []
-    for key,value in numCountDict.items():
-        heap.append([value, key])
+    for number,frequency in numCountDict.items():
+        heap.append([frequency, number])
 
     print(heap)
     heapq.heapify(heap)
@@ -27,7 +27,8 @@ def topKFrequent(nums, k):
         result.append(value)
 
     return result
-nums = [1,1,1,2,2,3]
+# nums = [1,1,1,2,2,3]
+nums = [4,4,5,5,5,5,1,1,1,2,2,3]
 k = 2
 print(topKFrequent(nums, k))
 '''
