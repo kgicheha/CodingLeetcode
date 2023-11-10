@@ -39,6 +39,9 @@ GIVEN:
     array of integers
     integer
 STEPS:
+
+    STRATEGY 1: TIME Complexity: O(nlogn), Space Complexity: O(n)
+
     import heapq
 
     create empty dictionary
