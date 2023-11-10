@@ -47,15 +47,33 @@ STEPS:
 
         import defaultdict from collections
 
-        create empty dictionary
+        create empty dictionary with list as its argument
 
         iterate through given array:
-            for each array:
+            for each string in the array:
                 sort the character
                 join the character
                 add the  sortedCharacter to the dictionary with the unsorted version as its value
 
         return the result dictionary
+
+
+
+    STRATEGY 2:
+        create empty dictionary with lists as its argument
+
+        iterate through given array:
+            itialize array with 26 Os, to represent the 26 letters in the alphabet
+                this will keep count of the character that appear in each string
+
+            for each character in a string:
+                increment the count by 1 where character appears in the alphabet
+
+
+            append the tuple of the character count with the string as its value
+
+        return the result array
+
 
 RESULTS:
 
