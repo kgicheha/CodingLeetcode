@@ -1,40 +1,69 @@
+
+# STRATEGY 2:
 def trap(height):
+    if len(height) == 0:
+        return 0
 
-    maxLeftArray = []
-    maxLeftArray.insert(0, 0)
+    lp = 0
+    rp = len(height) - 1
 
-    for i in range(len(height) - 1):
-        maxLeft = max(maxLeftArray[i], height[i])
-        maxLeftArray.append(maxLeft)
-
-    print(maxLeftArray)
-
-    maxRightArray = []
-    maxRightArray.insert(0, 0)
-
-    for i in range(len(height)-1, -1, -1):
-        maxRight = max(maxRightArray[0], height[i])
-        maxRightArray.insert(0, maxRight)
-
-    print(maxRightArray)
-
-    minValues = []
-
-    for i in range(len(maxLeftArray)):
-        minVal =  min(maxLeftArray[i], maxRightArray[i])
-        minValues.append(minVal)
-
-    print("Min Values:",minValues)
+    maxLeft = 0
+    maxRight = 0
 
     res = 0
 
-    for i in range(len(height)):
-        rainWater = minValues[i] - height[i]
+    while lp < rp:
 
-        if rainWater > 0:
+        if maxLeft < maxRight:
+            lp += 1
+            maxLeft = max(maxLeft, height[lp])
+            rainWater = maxLeft - height[lp]
+            res += rainWater
+        else:
+            rp -= 1
+            maxRight = max(maxRight, height[rp])
+            rainWater = maxRight - height[rp]
             res += rainWater
 
     return res
+# STRATEGY 1
+# def trap(height):
+
+#     maxLeftArray = []
+#     maxLeftArray.insert(0, 0)
+
+#     for i in range(len(height) - 1):
+#         maxLeft = max(maxLeftArray[i], height[i])
+#         maxLeftArray.append(maxLeft)
+
+#     print(maxLeftArray)
+
+#     maxRightArray = []
+#     maxRightArray.insert(0, 0)
+
+#     for i in range(len(height)-1, -1, -1):
+#         maxRight = max(maxRightArray[0], height[i])
+#         maxRightArray.insert(0, maxRight)
+
+#     print(maxRightArray)
+
+#     minValues = []
+
+#     for i in range(len(maxLeftArray)):
+#         minVal =  min(maxLeftArray[i], maxRightArray[i])
+#         minValues.append(minVal)
+
+#     print("Min Values:",minValues)
+
+#     res = 0
+
+#     for i in range(len(height)):
+#         rainWater = minValues[i] - height[i]
+
+#         if rainWater > 0:
+#             res += rainWater
+
+#     return res
 
 # height = [4,2,0,3,2,5]
 height = [0,1,0,2,1,0,1,3,2,1,2,1]
