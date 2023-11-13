@@ -63,7 +63,10 @@ STEPS:
     STRATEGY 2: creating helper function
 
         create helper function to check whether character is alphanumeric:
-            a character is aphanumeric is the it it between "A" and "Z", or between "a" and "z", or between "0" and "9".
+            a character is aphanumeric is the it is
+                between "A" and "Z",
+                or between "a" and "z",
+                or between "0" and "9".
 
         initialize left pointer to 0
         initialize right pointer to last element
