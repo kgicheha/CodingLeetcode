@@ -32,7 +32,7 @@ def isPalindrome(s):
 def alphaNum(char):
     return (ord('A') <= ord(char) <= ord('Z')
         or (ord('a') <= ord(char) <= ord('z'))
-        or (ord('1') <= ord(char) <= ord('9'))
+        or (ord('0') <= ord(char) <= ord('9'))
         )
 
 s = "A man, a plan, a canal: Panama"
@@ -62,7 +62,8 @@ STEPS:
 
     STRATEGY 2: creating helper function
 
-        create helper function to check whether character is alphanumeric
+        create helper function to check whether character is alphanumeric:
+            a character is aphanumeric is the it it between "A" and "Z", or between "a" and "z", or between "0" and "9".
 
         initialize left pointer to 0
         initialize right pointer to last element
@@ -71,17 +72,21 @@ STEPS:
         iterate through given string while left pointer is less than right pointer:
 
             while the left pointer is less the right:
-                check to see if the character is alphanumeric by passing into the helper function:
+                check to see if the character is not alphanumeric by passing into the helper function:
                     if it is:
                         increment the left pointer by 1
 
             while the right pointer is more than 1:
-                check to see if the character is alphanumerica by passing into the helper function:
+                check to see if the character is not alphanumerica by passing into the helper function:
                     if it is:
                         decrement right pointer by 1
 
         if the lower case version of the character at the left pointer is not equal to the lowercase verson of the character at the right pointer:
             return False
+
+
+        increment left by 1
+        decrement right by 1
 
 
     return True
