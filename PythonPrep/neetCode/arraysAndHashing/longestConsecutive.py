@@ -1,25 +1,18 @@
 def longestConsecutive(nums):
 
-    # STRATEGY 1: sorting --> TIME COMPLEXITY O(nlogn), SPACE = O(n)
-    nums.sort()
+    numsSet = set(nums)
+    max_length = 0
 
-    consecutiveCount = 0
+    for i in range(len(nums)):
+        if nums[i] - 1 not in numsSet:
+            current_length = 0
 
-    lp = 0
-    rp = lp + 1
+            while (nums[i] + current_length) in numsSet:
+                current_length += 1
 
-    while rp <= len(nums) - 1:
-        if abs(nums[rp] - nums[lp] == 1) or (nums[rp] == nums[lp]):
-            consecutiveCount += 1
-        else:
-            consecutiveCount = 0
+            max_length = max(max_length, current_length)
 
-        rp += 1
-        lp += 1
-
-
-    return consecutiveCount
-
+    return max_length
 
 nums = [0,3,7,2,5,8,4,6,0,1]
 print(longestConsecutive(nums))
@@ -31,6 +24,21 @@ Link: https://leetcode.com/problems/longest-consecutive-sequence/
 GIVEN:
     an unsorted of array of integers
 STEPS:
+    STRATEGY 1: using hashSet --> TIME and SPACE COMP O(n)
+    intialize set of the given nums array
+    initialize max_length to 0
+
+    iterate through given nums array
+        if the (current number - 1) is not in set: --> meaning this the beginning of a consective numbers
+            initialize current length equal to 0
+
+            while current number + current length in set:
+                increment length by 1
+
+            update the max_length if the current length is higher than it
+
+
+    return max_length
 RESULT:
     return the length of the longest consecutive elements sequence
 
