@@ -7,8 +7,8 @@ def trap(height):
     lp = 0
     rp = len(height) - 1
 
-    maxLeft = 0
-    maxRight = 0
+    maxLeft = height[lp]
+    maxRight = height[rp]
 
     res = 0
 
@@ -65,8 +65,8 @@ def trap(height):
 
 #     return res
 
-# height = [4,2,0,3,2,5]
-height = [0,1,0,2,1,0,1,3,2,1,2,1]
+height = [4,2,0,3,2,5]
+# height = [0,1,0,2,1,0,1,3,2,1,2,1]
 # Output: 9
 print(trap(height))
 
