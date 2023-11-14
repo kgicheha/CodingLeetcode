@@ -51,6 +51,7 @@ STEPS:
         # Initialize two stacks for the main and minimum values respectively
 
     def push(self, val):
+
         # Push the value to the main stack
 
         if minVal Stack is not empty:
