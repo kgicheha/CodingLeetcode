@@ -1,30 +1,50 @@
 def arrayOfProducts(array):
 
+    # STRATEGY 3: O(N)
+    res = [1] * len(array)
+
     product = 1
-
-    leftArray = [1] * len(array)
-
     for i in range(len(array)):
-        leftArray[i] = product
+        res[i] = product
         product *= array[i]
 
-    print(leftArray)
-
+    print(res)
     product = 1
-    rightArray = [1] * len(array)
-
     for i in range(len(array)-1, -1, -1):
-        rightArray[i] = product
+        res[i] *= product
         product *= array[i]
+    print(res)
 
-    print(rightArray)
 
-    res = []
 
-    for i in range(len(array)):
-        res.append(leftArray[i] * rightArray[i])
+# def arrayOfProducts(array):
 
-    return res
+#     # SOLUTION 2
+#     product = 1
+
+#     leftArray = [1] * len(array)
+
+#     for i in range(len(array)):
+#         leftArray[i] = product
+#         product *= array[i]
+
+#     print(leftArray)
+
+#     product = 1
+#     rightArray = [1] * len(array)
+
+#     for i in range(len(array)-1, -1, -1):
+#         rightArray[i] = product
+#         product *= array[i]
+
+#     print(rightArray)
+
+#     res = []
+
+#     for i in range(len(array)):
+#         res.append(leftArray[i] * rightArray[i])
+
+#     return res
 
 # def arrayOfProducts(array):
 
@@ -100,21 +120,24 @@ STEPS:
         return the result array
 
 
-    #
-    input Array = [5, 1, 4, 2]
+    # STRATEGY 3: TIME Complexity: O(n), Space Complexity: O(1)
 
-    leftProductArray = [1]
-    leftProductArray = [1, 5]
-    leftProductArray = [1, 5, 5]
-    leftProductArray = [1, 5, 5, 20, 40]
+        initialize result array equalt to the length of the given array
 
-    input Array = [5, 1, 4, 2]
+        initalize product equal to 1
 
-    rightProductArray =[1]
-    rightProductArray =[2, 1]
-    rightProductArray =[8, 2, 1]
-    rightProductArray =[8, 8, 2, 1]
-    rightProductArray =[40, 8, 8, 2, 1]
+        iterate through given array: from left to right
+            at each index:
+                append the product to the result array at its corresponding index in the
+                multiply product by the number at the current index
+
+
+        reset product equal to 1
+
+        iterate through given array in reverse order:
+            at each index:
+                multiply the current number with the number that in the same index in the result array
+                multiply the current number with the product
 
 
 '''
