@@ -1,5 +1,9 @@
 def permutions(array):
-    pass
+
+    if len(array) == 0:
+        return []
+
+
 
 array = [1,2,3]
 
@@ -10,4 +14,8 @@ GIVEN:
     array of unique integers
 STEPS:
 RESULTS:
+    return all the permutations of those integers
+
+    if input is empty,
+        return an empty array
 '''
