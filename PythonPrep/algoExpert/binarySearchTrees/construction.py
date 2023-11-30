@@ -1,38 +1,44 @@
 class BST:
     def __init__(self, data):
         self.value = value
-        self.right = None
-        self.left = None
+        self.leftChild = None
+        self.rightChild = None
 
     def insert(self, value):
         if value < self.value:
-            if self.left is None:
-                self.left = BST(value)
+            if self.leftChild is None:
+                self.leftChild = BST(value)
             else:
-                self.left.insert(value)
+                self.leftChild.insert(value)
 
         else:
-            if self.right is None:
-                self.right = BST(value)
+            if self.rightChild is None:
+                self.rightChild = BST(value)
             else:
-                self.right.insert(value)
+                self.rightChild.insert(value)
 
         return self
 
     def getMinVal(self):
-        if self.left is None:
+        if self.leftChild is None:
             return self.value
         else:
-            self.left.getMinVal()
+            self.leftChild.getMinVal()
 
-    def search(self, value):
-        if self.value == value:
-            return self
-        elif value < self.value:
-            self.left.search(value)
+    def find(self, value):
+
+        if value < self.value:
+            if self.leftChild is None:
+                return False
+            else:
+                return self.leftChild.find(value)
+        elif value > self.value:
+            if self.rightChild is None:
+                return False
+            else:
+                return self.rightChild.find(value)
         else:
-            self.right.search(value)
-
+            return True
 '''
 INSERT method
 
