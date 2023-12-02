@@ -1,23 +1,26 @@
-class BST:
-    def __init__(self, data):
+class TreeNode:
+    def __init__(self, value):
         self.value = value
         self.leftChild = None
         self.rightChild = None
 
     def insert(self, value):
-        if value < self.value:
+
+        if value == self.value:
+            return
+        elif value < self.value:
             if self.leftChild is None:
-                self.leftChild = BST(value)
+                self.leftChild = TreeNode(value)
             else:
-                self.leftChild.insert(value)
+                return self.leftChild.insert(value)
 
         else:
             if self.rightChild is None:
-                self.rightChild = BST(value)
+                self.rightChild = TreeNode(value)
             else:
-                self.rightChild.insert(value)
+                return self.rightChild.insert(value)
 
-        return self
+        return
 
     def getMinVal(self):
         if self.leftChild is None:
@@ -39,6 +42,47 @@ class BST:
                 return self.rightChild.find(value)
         else:
             return True
+
+    # used for creating a copy of the tree
+    def preOrderTraversal(self):
+        print(self.value)
+
+        if self.leftChild:
+            self.leftChild.preOrderTraversal()
+
+        if self.rightChild:
+            self.rightChild.preOrderTraversal()
+
+    # return the non-decreasing order
+    def inOrderTraversal(self):
+        if self.leftChild:
+            self.leftChild.inOrderTraversal()
+        print(self.value)
+        if self.rightChild:
+            self.rightChild.inOrderTraversal()
+
+    # used for tree deletion
+    def postOrderTraversal(self):
+        if self.leftChild:
+            self.leftChild.postOrderTraversal()
+
+        if self.rightChild:
+            self.rightChild.postOrderTraversal()
+
+        print(self.value)
+
+root = TreeNode(4)
+
+root.insert(2)
+root.insert(5)
+root.insert(1)
+root.insert(3)
+root.insert(6)
+root.insert(7)
+root.insert(4)
+
+root.postOrderTraversal()
+print(root.find(7))
 '''
 INSERT method
 
