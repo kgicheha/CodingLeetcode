@@ -1,19 +1,21 @@
 def superDigit(n, k):
     # Write your code here
+        def helper(n):
+            total = 0
 
-    stringVersion = str(n)
+            for num in n:
+                total += int(num)
 
-    result = [0]
+            total = str(total)
 
-    for i in range(n):
-        for char in stringVersion:
-            helperFunction(char, result)
+            if len(total) == 1:
+                return total
+            else:
+                return helper(total)
 
-    return result
+        p = str(helper(n) * k)
+        return helper(p)
 
-def helperFunction(char, result):
-    intVersion = int(char)
-
-    result[0] += intVersion
-
-superDigit(n, k)
+n = 9875
+k = 4
+print(superDigit(n, k))

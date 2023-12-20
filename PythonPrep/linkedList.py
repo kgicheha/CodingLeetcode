@@ -8,7 +8,7 @@ class LinkedList:
         self.head = None
         self.length = 1
 
-    def printList(self):
+    def display(self):
         current = self.head
 
         while current:
@@ -148,6 +148,9 @@ class LinkedList:
         while current.next:
             previous = current
             current = current.next
+
+        previous.next = None
+
         self.length -= 1
 
         if self.length == 0:
@@ -164,11 +167,11 @@ class LinkedList:
         if index < 0 or index >= self.length:
             return None
 
-        before = self.get(index - 1)
+        previous = self.get(index - 1)
 
-        current = before.next
+        current = previous.next
 
-        before.next = current.next
+        previous.next = previous.next.next
         current.next = None
 
         self.length -= 1
@@ -205,13 +208,15 @@ my_llist.append(1)
 my_llist.append(2)
 my_llist.append(3)
 my_llist.append(4)
-# my_llist.prepend(1)
-# my_llist.insert_after_node(my_llist.head.next, 1)
-# my_llist.insert_in_middle(5)
-my_llist.printList()
-# print(my_llist.get(2))
-print(my_llist.insert(1, 109))
+
+# my_llist.prepend(100)
+# my_llist.insert(2, 300)
+my_llist.display()
+# my_llist.set(3, 500)
+my_llist.remove(2)
+my_llist.display()
+
 # my_llist.printList()
 # print("Removed item",my_llist.remove(1))
-my_llist.printList()
+# my_llist.printList()
 # my_llist.reverseList()
